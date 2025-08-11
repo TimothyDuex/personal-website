@@ -1,7 +1,7 @@
 export default function Resume() {
     return (
         <div>
-            <text>This will one day be the Resume page.</text>
+            <p>This will one day be the Resume page.</p>
         </div>
     );
 }
