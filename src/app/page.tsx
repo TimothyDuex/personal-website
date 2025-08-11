@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Header from "./components/header";
 
 export default function Home() {
   return (
       <div>
-        <text>Welcome to my personal blog!</text>
+          <text>This will one day be the Home page.</text>
       </div>
   );
 }
