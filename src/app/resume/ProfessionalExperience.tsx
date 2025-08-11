@@ -2,38 +2,12 @@
 
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-
-interface WorkExperience {
-    id: number,
-    company: string,
-    position: string,
-    location: string,
-    period: string,
-    description: string,
-    responsibilities: string[],
-    technologies: string[],
-}
+import getWorkExperience, {WorkExperience} from "./WorkExperience";
 
 const ProfessionalExperience = () => {
     const [selectedExperience, setSelectedExperience] = useState<WorkExperience|null>(null);
 
-    const experiences: WorkExperience[] = [
-        {
-            id: 1,
-            company: "Amazon",
-            position: "Software Development Engineer II",
-            location: "New York, New York",
-            period: "June. 2022 - Dec. 2024",
-            description: "Fullstack engineering work on internal tools to support Amazon's internal HR system.",
-            responsibilities: [
-                "Designed and deployed scalable cloud architectures using AWS EC2, S3, and Lambda",
-                "Implemented automated CI/CD pipelines using AWS CodePipeline and CodeBuild",
-                "Monitored system performance and optimized resource utilization",
-                "Collaborated with development teams to ensure seamless deployment processes"
-            ],
-            technologies: ["AWS", "Typescript", "React"]
-        },
-    ];
+    const experiences: WorkExperience[] = getWorkExperience();
 
     const openModal = (experience: WorkExperience) => {
         setSelectedExperience(experience);
