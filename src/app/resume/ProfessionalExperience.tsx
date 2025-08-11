@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import {Briefcase, Calendar, MapPin, MessageSquareMore, X} from 'lucide-react';
 import getWorkExperience, {WorkExperience} from "./WorkExperience";
+import IconTextRow from "../components/IconTextRow";
+import Image from "next/image";
 
 const ProfessionalExperience = () => {
     const [selectedExperience, setSelectedExperience] = useState<WorkExperience|null>(null);
@@ -44,32 +46,59 @@ function WorkExperienceCard({ experience, openModal }: {experience: WorkExperien
         >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between">
                 <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        {experience.company}
-                    </h3>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mb-2">
-                        <p className="text-lg text-gray-700 font-medium">
-                            {experience.position}
-                        </p>
-                    </div>
-                    <p className="text-gray-600 mb-2">
-                        {experience.location}
-                    </p>
-                    <p className="text-gray-500 text-sm line-clamp-2">
-                        {experience.description}
-                    </p>
+                    <WorkExperienceCardCompany experience={experience}/>
+                    <IconTextRow icon={Briefcase} text={experience.position}/>
+                    <IconTextRow icon={MapPin} text={experience.location}/>
+                    <WorkExperienceCardDescription experience={experience}/>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-6">
-                    <p className="text-gray-500 font-medium text-right">
-                        {experience.period}
-                    </p>
+                    <WorkExperienceCardPeriod experience={experience}/>
                 </div>
             </div>
         </div>
     )
 }
 
-function WorkExperiencePopOver({ experience, closeModal }: {experience: WorkExperience, closeModal: () => void}) {
+function WorkExperienceCardCompany({ experience }: { experience: WorkExperience }) {
+    return (
+        <div className={`flex items-center gap-3 mb-5`}>
+            <Image
+                src={`/images/${experience.companyImage}`}
+                alt={experience.companyImage}
+                width={75} // Optional, but recommended for explicit control
+                height={75} // Optional, but recommended for explicit control
+                className="w-10 h-10 object-contain flex-shrink-0"
+            />
+            <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                {experience.company}
+            </h3>
+        </div>
+    )
+}
+
+function WorkExperienceCardDescription({experience}: { experience: WorkExperience }) {
+    return (
+        <div className={`flex items-center gap-3`}>
+            <MessageSquareMore className="w-5 h-5 text-gray-600 flex-shrink-0"/>
+            <p className="text-gray-500 text-sm line-clamp-2">
+                {experience.description}
+            </p>
+        </div>
+    )
+}
+
+function WorkExperienceCardPeriod({experience}: { experience: WorkExperience }) {
+    return (
+        <div className={`flex items-center gap-3`}>
+            <Calendar className="w-5 h-5 text-gray-600 flex-shrink-0"/>
+            <p className="text-gray-500 font-medium text-right">
+                {experience.period}
+            </p>
+        </div>
+    )
+}
+
+function WorkExperiencePopOver({experience, closeModal}: { experience: WorkExperience, closeModal: () => void }) {
     return (
         <div className="fixed inset-0 bg-transparent flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
@@ -139,7 +168,6 @@ function WorkExperiencePopOver({ experience, closeModal }: {experience: WorkExpe
             </div>
         </div>
     )
-
 }
 
 export default ProfessionalExperience;

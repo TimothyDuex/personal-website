@@ -4,6 +4,7 @@
 export interface WorkExperience {
     id: number,
     company: string,
+    companyImage: string,
     position: string,
     location: string,
     period: string,
@@ -19,6 +20,7 @@ const workExperiences: WorkExperience[] = [
     {
         id: 1,
         company: "Amazon",
+        companyImage: "amazon_logo.jpeg",
         position: "Software Development Engineer II",
         location: "New York, New York",
         period: "Jun. 2022 - Dec. 2024",
@@ -43,6 +45,7 @@ const workExperiences: WorkExperience[] = [
     {
         id: 2,
         company: "Amazon Web Services",
+        companyImage: "amazon_web_services_logo.jpeg",
         position: "Software Development Engineer II",
         location: "Seattle, WA",
         period: "Oct. 2021 - Jun. 2022",
@@ -59,6 +62,7 @@ const workExperiences: WorkExperience[] = [
     {
         id: 3,
         company: "Amazon Web Services",
+        companyImage: "amazon_web_services_logo.jpeg",
         position: "Software Development Engineer I",
         location: "Seattle, WA",
         period: "July. 2019 - Oct. 2021",
@@ -73,6 +77,7 @@ const workExperiences: WorkExperience[] = [
     {
         id: 4,
         company: "Amazon Web Services",
+        companyImage: "amazon_web_services_logo.jpeg",
         position: "Software Development Engineer Intern",
         location: "Seattle, WA",
         period: "May. 2018 - Aug. 2018",
@@ -87,6 +92,7 @@ const workExperiences: WorkExperience[] = [
     {
         id: 5,
         company: "Saber Astronautics",
+        companyImage: "saber_astronautics_logo.jpeg",
         position: "Software Engineering Intern",
         location: "Sydney Australia 🦘",
         period: "June. 2022 - Dec. 2024",
