@@ -6,7 +6,7 @@ import ProfilePanel from "./ProfilePanel";
 
 const ContactInfoPanel = () => {
     return (
-        <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-6 my-6 px-6 py-4 border border-gray-300 rounded-3xl">
             <div className="grid grid-rows-2 gap-3">
                 <div className="flex justify-center items-center">
                     <ProfilePanel/>
@@ -20,7 +20,7 @@ const ContactInfoPanel = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 
