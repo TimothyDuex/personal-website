@@ -1,16 +1,22 @@
 import React from 'react';
-import getContactInfo, {ContactInfo} from "../ContactInfo";
-import getSocialLinks, {SocialLink} from "../SocialLink";
+import getContactInfo, {ContactInfo} from "../(info)/ContactInfo";
+import getSocialLinks, {SocialLink} from "../(info)/SocialLink";
+import ProfilePanel from "./ProfilePanel";
 
 const ContactInfoPanel = () => {
     return (
         <section className="max-w-6xl mx-auto px-6 py-16">
-            <div className="grid grid-cols-1 gap-5">
+            <div className="grid grid-rows-2 gap-3">
                 <div className="flex justify-center items-center">
-                    <ContactInfoExplicit/>
+                    <ProfilePanel/>
                 </div>
-                <div className="flex justify-center items-center gap-2">
-                    <ContactInfoImplicit/>
+                <div className="grid grid-cols-1 gap-5">
+                    <div className="flex justify-center items-center">
+                        <ContactInfoExplicit/>
+                    </div>
+                    <div className="flex justify-center items-center gap-2">
+                        <ContactInfoImplicit/>
+                    </div>
                 </div>
             </div>
         </section>

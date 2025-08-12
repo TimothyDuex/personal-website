@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import {Briefcase, Calendar, MapPin, MessageSquareMore, X} from 'lucide-react';
-import getWorkExperience, {WorkExperience} from "./WorkExperience";
+import getWorkExperience, {WorkExperience} from "../(info)/WorkExperience";
 import IconTextRow from "../components/IconTextRow";
 import Image from "next/image";
 
