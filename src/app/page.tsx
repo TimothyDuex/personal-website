@@ -1,9 +1,9 @@
-import Header from "./components/header";
+import ContactInfoPanel from "./components/ContactInfoPanel";
 
 export default function Home() {
   return (
       <div>
-          <p>This will one day be the Home page.</p>
+          <ContactInfoPanel />
       </div>
   );
 }
