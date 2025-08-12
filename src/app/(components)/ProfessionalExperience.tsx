@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import {Briefcase, Calendar, MapPin, MessageSquareMore, X} from 'lucide-react';
 import getWorkExperience, {WorkExperience} from "../(info)/WorkExperience";
-import IconTextRow from "../components/IconTextRow";
+import IconTextRow from "./IconTextRow";
 import Image from "next/image";
 
 const ProfessionalExperience = () => {
