@@ -2,6 +2,7 @@ import React from 'react';
 import getContactInfo, {ContactInfo} from "../(info)/ContactInfo";
 import getSocialLinks, {SocialLink} from "../(info)/SocialLink";
 import ProfilePanel from "./ProfilePanel";
+import AboutSection from "./AboutSection";
 
 const ContactInfoPanel = () => {
     return (
@@ -18,6 +19,9 @@ const ContactInfoPanel = () => {
                         <ContactInfoImplicit/>
                     </div>
                 </div>
+            </div>
+            <div>
+                <AboutSection />
             </div>
         </section>
     );
