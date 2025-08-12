@@ -3,20 +3,31 @@ import React from 'react';
 import getContactInfo, {ContactInfo} from "../(info)/ContactInfo";
 import getSocialLinks, {SocialLink} from "../(info)/SocialLink";
 import ProfilePanel from "./ProfilePanel";
+import ContactButton from "./ContactButton";
 
 const ContactInfoPanel = () => {
+    const [isContactOpen, setIsContactOpen] = React.useState<boolean>(false);
+
     return (
-        <div className="max-w-4xl mx-6 my-6 px-6 py-4 rounded-3xl bg-neutral-800">
-            <div className="grid grid-rows-2 gap-3">
+        <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-neutral-800">
+            <div className="grid grid-rows-1 gap-1">
                 <div className="flex justify-center items-center">
                     <ProfilePanel/>
                 </div>
-                <div className="grid grid-cols-1 gap-5">
-                    <div className="flex justify-center items-center">
-                        <ContactInfoExplicit/>
-                    </div>
-                    <div className="flex justify-center items-center gap-2">
-                        <ContactInfoImplicit/>
+                <div className="flex justify-center items-center">
+                    <ContactButton isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
+                </div>
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isContactOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                    <div className="grid grid-cols-1 gap-5">
+                        <hr className="border-neutral-300"/>
+                        <div className="flex justify-center items-center">
+                            <ContactInfoExplicit/>
+                        </div>
+                        <div className="flex justify-center items-center gap-2">
+                            <ContactInfoImplicit/>
+                        </div>
                     </div>
                 </div>
             </div>
