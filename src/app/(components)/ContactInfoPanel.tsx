@@ -9,7 +9,7 @@ const ContactInfoPanel = () => {
     const [isContactOpen, setIsContactOpen] = React.useState<boolean>(false);
 
     return (
-        <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-neutral-800">
+        <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-neutral-800 border border-neutral-700">
             <div className="grid grid-rows-1 gap-1">
                 <div className="flex justify-center items-center">
                     <ProfilePanel/>
