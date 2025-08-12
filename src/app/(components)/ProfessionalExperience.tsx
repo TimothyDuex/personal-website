@@ -21,8 +21,8 @@ const ProfessionalExperience = () => {
 
     return (
         <>
-            <div className="max-w-4xl mx-auto px-6 py-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Professional Experiences</h2>
+            <div className="max-w-4xl mx-auto px-6 py-2">
+                <h2 className="text-2xl font-bold text-gray-200 mb-8">Professional Experiences</h2>
 
                 <div className="space-y-6">
                     {experiences.map((exp) => (
@@ -41,7 +41,7 @@ function WorkExperienceCard({ experience, openModal }: {experience: WorkExperien
     return (
         <div
             key={experience.id}
-            className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer hover:border-blue-300"
+            className="bg-neutral-600 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
             onClick={() => openModal(experience)}
         >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between">
@@ -69,7 +69,7 @@ function WorkExperienceCardCompany({ experience }: { experience: WorkExperience 
                 height={75} // Optional, but recommended for explicit control
                 className="w-10 h-10 object-contain flex-shrink-0"
             />
-            <h3 className="text-xl font-semibold text-gray-900 mb-1">
+            <h3 className="text-xl font-semibold text-gray-200 mb-1">
                 {experience.company}
             </h3>
         </div>
@@ -79,8 +79,8 @@ function WorkExperienceCardCompany({ experience }: { experience: WorkExperience 
 function WorkExperienceCardDescription({experience}: { experience: WorkExperience }) {
     return (
         <div className={`flex items-center gap-3`}>
-            <MessageSquareMore className="w-5 h-5 text-gray-600 flex-shrink-0"/>
-            <p className="text-gray-500 text-sm line-clamp-2">
+            <MessageSquareMore className="w-5 h-5 text-gray-300 flex-shrink-0"/>
+            <p className="text-gray-300 text-sm line-clamp-2">
                 {experience.description}
             </p>
         </div>
@@ -90,8 +90,8 @@ function WorkExperienceCardDescription({experience}: { experience: WorkExperienc
 function WorkExperienceCardPeriod({experience}: { experience: WorkExperience }) {
     return (
         <div className={`flex items-center gap-3`}>
-            <Calendar className="w-5 h-5 text-gray-600 flex-shrink-0"/>
-            <p className="text-gray-500 font-medium text-right">
+            <Calendar className="w-5 h-5 text-gray-200 flex-shrink-0"/>
+            <p className="text-gray-200 font-medium text-right">
                 {experience.period}
             </p>
         </div>

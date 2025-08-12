@@ -6,7 +6,7 @@ import ProfilePanel from "./ProfilePanel";
 
 const ContactInfoPanel = () => {
     return (
-        <div className="max-w-4xl mx-6 my-6 px-6 py-4 border border-gray-300 rounded-3xl">
+        <div className="max-w-4xl mx-6 my-6 px-6 py-4 rounded-3xl bg-neutral-800">
             <div className="grid grid-rows-2 gap-3">
                 <div className="flex justify-center items-center">
                     <ProfilePanel/>
@@ -37,16 +37,16 @@ function ContactInfoExplicit() {
                             <contact.icon className="w-5 h-5 text-blue-600"/>
                         </div>
                         <div>
-                            <p className="text-sm font-medium text-gray-500">{contact.label}</p>
+                            <p className="text-sm font-medium text-gray-400">{contact.label}</p>
                             {contact.link ? (
                                 <a
                                     href={contact.link}
-                                    className="text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                                    className="text-gray-200 hover:text-blue-600 transition-colors duration-200"
                                 >
                                     {contact.value}
                                 </a>
                             ) : (
-                                <p className="text-gray-900">{contact.value}</p>
+                                <p className="text-gray-200">{contact.value}</p>
                             )}
                         </div>
                     </div>
@@ -69,7 +69,7 @@ function ContactInfoImplicit() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 flex items-center justify-center text-gray-600 ${social.color} transition-colors duration-200`}
+                        className={`w-10 h-10 flex items-center justify-center text-gray-400 ${social.color} transition-colors duration-200`}
                         aria-label={social.label}
                     >
                         <social.icon className="w-5 h-5"/>

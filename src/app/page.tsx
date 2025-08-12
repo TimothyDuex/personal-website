@@ -10,15 +10,17 @@ export default function Home() {
     const [page, setPage] = useState(0);
 
     return (
-        <div className="grid justify-center">
-            {/* Contact Info Panel */}
-            <ContactInfoPanel />
-            {/* NavBar */}
-            <div className="max-w-4xl mx-6 my-6 px-6 py-4 border border-gray-300 rounded-3xl">
-                <NavBar page={page} setPage={setPage} />
-                {/* Respective Content to NavBar Selection */}
-                {page == 0 && <AboutSection />}
-                {page == 1 && <ProfessionalExperience/>}
+        <div className="w-screen min-h-screen bg-black">
+            <div className="grid justify-center">
+                {/* Contact Info Panel */}
+                <ContactInfoPanel/>
+                {/* NavBar */}
+                <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-neutral-800 rounded-3xl">
+                    <NavBar page={page} setPage={setPage}/>
+                    {/* Respective Content to NavBar Selection */}
+                    {page == 0 && <AboutSection/>}
+                    {page == 1 && <ProfessionalExperience/>}
+                </div>
             </div>
         </div>
     );
