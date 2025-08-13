@@ -17,12 +17,7 @@ const NavBar = ({
             {/* About Section */}
             <div className="max-w-6xl mx-auto px-6 py-6">
                 {/* Section Header */}
-                <div className="flex justify-between mb-6">
-                    <div className="text-center">
-                        <h1 className="text-2xl md:text-3xl font-bold text-primary-text">
-                            About Tim ✌
-                        </h1>
-                    </div>
+                <div className="flex justify-center">
                     {/* Navigation Row */}
                     <div className="flex items-baseline space-x-4">
                         {navItems.map((item) => (
