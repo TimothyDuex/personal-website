@@ -1,10 +1,10 @@
 'use client'
 
-import ContactInfoPanel from "./(components)/ContactInfoPanel";
-import NavBar from "./(components)/NavBar";
-import AboutSection from "./(components)/AboutSection";
+import ContactInfoPanel from "./_components/_profile/ContactInfoPanel";
+import NavBar from "./_components/NavBar";
+import AboutSection from "./_components/_about/AboutSection";
 import {useState} from "react";
-import ProfessionalExperience from "./(components)/ProfessionalExperience";
+import ProfessionalExperience from "./_components/_resume/ProfessionalExperience";
 
 export default function Home() {
     const [page, setPage] = useState(0);

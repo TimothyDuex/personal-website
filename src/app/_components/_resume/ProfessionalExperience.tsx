@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import {Briefcase, Calendar, MapPin, MessageSquareMore, X} from 'lucide-react';
-import getWorkExperience, {WorkExperience} from "../(info)/WorkExperience";
-import IconTextRow from "./IconTextRow";
+import getWorkExperience, {WorkExperience} from "../../_info/WorkExperience";
+import IconTextRow from "../_profile/IconTextRow";
 import Image from "next/image";
 
 const ProfessionalExperience = () => {

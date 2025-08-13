@@ -1,7 +1,7 @@
 import React from 'react';
 
-import getContactInfo, {ContactInfo} from "../(info)/ContactInfo";
-import getSocialLinks, {SocialLink} from "../(info)/SocialLink";
+import getContactInfo, {ContactInfo} from "../../_info/ContactInfo";
+import getSocialLinks, {SocialLink} from "../../_info/SocialLink";
 import ProfilePanel from "./ProfilePanel";
 import ContactButton from "./ContactButton";
 

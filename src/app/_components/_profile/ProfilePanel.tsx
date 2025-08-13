@@ -1,5 +1,5 @@
 import React from 'react';
-import {getProfileInfo, ProfileInfo} from "../(info)/ProfileInfo";
+import {getProfileInfo, ProfileInfo} from "../../_info/ProfileInfo";
 import Image from "next/image";
 
 const ProfilePanel = () => {
