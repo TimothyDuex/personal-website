@@ -95,7 +95,7 @@ const workExperiences: WorkExperience[] = [
         companyImage: "saber_astronautics_logo.jpeg",
         position: "Software Engineering Intern",
         location: "Sydney Australia 🦘",
-        period: "June. 2022 - Dec. 2024",
+        period: "May. 2017 - Jul. 2017",
         description: "Develop scripting support to parse application data that was previously manually calculated within excel.",
         responsibilities: [
             "Primarily used Octave to automate the parsing of hundreds of outputted application data files for which to supply statistics and data to potential customer inquiries.",
