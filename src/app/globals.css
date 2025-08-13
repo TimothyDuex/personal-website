@@ -21,8 +21,8 @@
   --color-secondary-bg: var(--color-neutral-700);
   --color-secondary-border: var(--color-neutral-500);
 
-  --color-fill-bg: var(--color-gray-100);
-  --color-fill-bg-hover: var(--color-neutral-800);
+  --color-fill-bg: var(--color-blue-100);
+  --color-fill-bg-hover: var(--color-neutral-100);
   --color-fill-border: var(--color-blue-50);
   --color-fill-text: var(--color-blue-700);
   --color-fill-text-hover: var(--color-gray-900);
