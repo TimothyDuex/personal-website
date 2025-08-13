@@ -22,7 +22,7 @@ const ProfessionalExperience = () => {
     return (
         <>
             <div className="max-w-4xl mx-auto px-6 py-2">
-                <h2 className="text-2xl font-bold text-gray-200 mb-8">Professional Experiences</h2>
+                <h2 className="text-2xl font-bold text-primary-text mb-8">Professional Experiences</h2>
 
                 <div className="space-y-6">
                     {experiences.map((exp) => (
@@ -41,7 +41,7 @@ function WorkExperienceCard({ experience, openModal }: {experience: WorkExperien
     return (
         <div
             key={experience.id}
-            className="bg-neutral-700 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer border border-neutral-500"
+            className="bg-secondary-bg border border-secondary-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
             onClick={() => openModal(experience)}
         >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between">
@@ -69,7 +69,7 @@ function WorkExperienceCardCompany({ experience }: { experience: WorkExperience 
                 height={75} // Optional, but recommended for explicit control
                 className="w-10 h-10 object-contain flex-shrink-0"
             />
-            <h3 className="text-xl font-semibold text-gray-200 mb-1">
+            <h3 className="text-xl font-semibold text-primary-text mb-1">
                 {experience.company}
             </h3>
         </div>
@@ -79,8 +79,8 @@ function WorkExperienceCardCompany({ experience }: { experience: WorkExperience 
 function WorkExperienceCardDescription({experience}: { experience: WorkExperience }) {
     return (
         <div className={`flex items-center gap-3`}>
-            <MessageSquareMore className="w-5 h-5 text-gray-300 flex-shrink-0"/>
-            <p className="text-gray-300 text-sm line-clamp-2">
+            <MessageSquareMore className="w-5 h-5 text-secondary-text flex-shrink-0"/>
+            <p className="text-secondary-text text-sm line-clamp-2">
                 {experience.description}
             </p>
         </div>
@@ -90,8 +90,8 @@ function WorkExperienceCardDescription({experience}: { experience: WorkExperienc
 function WorkExperienceCardPeriod({experience}: { experience: WorkExperience }) {
     return (
         <div className={`flex items-center gap-3`}>
-            <Calendar className="w-5 h-5 text-gray-200 flex-shrink-0"/>
-            <p className="text-gray-200 font-medium text-right">
+            <Calendar className="w-5 h-5 text-secondary-text flex-shrink-0"/>
+            <p className="text-secondary-text font-medium text-right">
                 {experience.period}
             </p>
         </div>
@@ -101,9 +101,9 @@ function WorkExperienceCardPeriod({experience}: { experience: WorkExperience }) 
 function WorkExperiencePopOver({experience, closeModal}: { experience: WorkExperience, closeModal: () => void }) {
     return (
         <div className="fixed inset-0 backdrop-blur-xs bg-black/10 flex items-center justify-center p-4 z-50">
-            <div className="bg-neutral-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-neutral-700">
+            <div className="bg-primary-bg rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-primary-border">
                 {/* Modal Header */}
-                <div className="sticky top-0 bg-neutral-800 border-b border-neutral-700 px-6 py-4 flex justify-between items-start">
+                <div className="sticky top-0 bg-primary-bg border-b border-primary-border px-6 py-4 flex justify-between items-start">
                     <div>
                         <WorkExperienceCardCompany experience={experience}/>
                         <IconTextRow icon={Briefcase} text={experience.position}/>
@@ -112,7 +112,7 @@ function WorkExperiencePopOver({experience, closeModal}: { experience: WorkExper
                     </div>
                     <button
                         onClick={closeModal}
-                        className="text-gray-300 hover:text-gray-600 transition-colors p-1"
+                        className="text-tertiary-text hover:text-gray-600 transition-colors p-1"
                     >
                         <X size={24} />
                     </button>
@@ -123,20 +123,20 @@ function WorkExperiencePopOver({experience, closeModal}: { experience: WorkExper
                     <div className="space-y-6">
                         {/* Description */}
                         <div>
-                            <h3 className="text-lg font-semibold text-gray-100 mb-3">Overview</h3>
-                            <p className="text-gray-200 leading-relaxed">
+                            <h3 className="text-lg font-semibold text-primary-text mb-3">Overview</h3>
+                            <p className="text-secondary-text leading-relaxed">
                                 {experience.description}
                             </p>
                         </div>
 
                         {/* Responsibilities */}
                         <div>
-                            <h3 className="text-lg font-semibold text-gray-100 mb-3">Key Responsibilities</h3>
+                            <h3 className="text-lg font-semibold text-primary-text mb-3">Key Responsibilities</h3>
                             <ul className="space-y-2">
                                 {experience.responsibilities.map((responsibility, index) => (
                                     <li key={index} className="flex items-start">
                                         <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        <span className="text-gray-200">{responsibility}</span>
+                                        <span className="text-secondary-text">{responsibility}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -144,12 +144,12 @@ function WorkExperiencePopOver({experience, closeModal}: { experience: WorkExper
 
                         {/* Technologies */}
                         <div>
-                            <h3 className="text-lg font-semibold text-gray-100 mb-3">Technologies & Tools</h3>
+                            <h3 className="text-lg font-semibold text-primary-text mb-3">Technologies & Tools</h3>
                             <div className="flex flex-wrap gap-2">
                                 {experience.technologies.map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-50"
+                                        className="bg-fill-bg text-fill-text px-3 py-1 rounded-full text-sm font-medium border border-fill-border"
                                     >
                         {tech}
                       </span>

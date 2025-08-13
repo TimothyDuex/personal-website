@@ -10,6 +10,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary-text: var(--color-gray-100);
+  --color-secondary-text: var(--color-gray-200);
+  --color-tertiary-text: var(--color-gray-300);
+  --color-quaternary-text: var(--color-gray-400);
+
+  --color-primary-bg: var(--color-neutral-800);
+  --color-primary-border: var(--color-neutral-700);
+  --color-secondary-bg: var(--color-neutral-700);
+  --color-secondary-border: var(--color-neutral-500);
+
+  --color-fill-bg: var(--color-gray-100);
+  --color-fill-bg-hover: var(--color-neutral-800);
+  --color-fill-border: var(--color-blue-50);
+  --color-fill-text: var(--color-blue-700);
+  --color-fill-text-hover: var(--color-gray-900);
 }
 
 @media (prefers-color-scheme: dark) {

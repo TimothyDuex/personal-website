@@ -18,7 +18,7 @@ const ContactButton = (
     return (
         <button
             onClick={togglePanel}
-            className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-gray-300 bg-neutral-800 hover:bg-gray-100 hover:text-gray-900"
+            className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-tertiary-text bg-neutral-800 hover:bg-gray-100 hover:text-gray-900"
         >
             { isOpen ? <CircleChevronUp /> :<CircleChevronDown /> }
         </button>

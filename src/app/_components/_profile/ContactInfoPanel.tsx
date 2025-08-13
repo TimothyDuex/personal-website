@@ -9,7 +9,7 @@ const ContactInfoPanel = () => {
     const [isContactOpen, setIsContactOpen] = React.useState<boolean>(false);
 
     return (
-        <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-neutral-800 border border-neutral-700">
+        <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-primary-bg border border-primary-border">
             <div className="grid grid-rows-1 gap-1">
                 <div className="flex justify-center items-center">
                     <ProfilePanel/>
@@ -44,20 +44,20 @@ function ContactInfoExplicit() {
                 {contactInfo.map((contact, index) => (
                     <div key={index} className="flex items-center space-x-4">
                         <div
-                            className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <contact.icon className="w-5 h-5 text-blue-600"/>
+                            className="flex-shrink-0 w-10 h-10 bg-fill-bg rounded-lg flex items-center justify-center">
+                            <contact.icon className="w-5 h-5 text-fill-text"/>
                         </div>
                         <div>
-                            <p className="text-sm font-medium text-gray-400">{contact.label}</p>
+                            <p className="text-sm font-medium text-quaternary-text">{contact.label}</p>
                             {contact.link ? (
                                 <a
                                     href={contact.link}
-                                    className="text-gray-200 hover:text-blue-600 transition-colors duration-200"
+                                    className="text-secondary-text hover:text-fill-text transition-colors duration-200"
                                 >
                                     {contact.value}
                                 </a>
                             ) : (
-                                <p className="text-gray-200">{contact.value}</p>
+                                <p className="text-secondary-text">{contact.value}</p>
                             )}
                         </div>
                     </div>
@@ -80,7 +80,7 @@ function ContactInfoImplicit() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 flex items-center justify-center text-gray-400 ${social.color} transition-colors duration-200`}
+                        className={`w-10 h-10 flex items-center justify-center text-quaternary-text ${social.color} transition-colors duration-200`}
                         aria-label={social.label}
                     >
                         <social.icon className="w-5 h-5"/>

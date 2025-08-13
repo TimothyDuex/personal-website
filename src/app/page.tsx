@@ -16,7 +16,7 @@ export default function Home() {
                 <div className="pt-6"/>
                 <ContactInfoPanel/>
                 {/* NavBar */}
-                <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-neutral-800 rounded-3xl border border-neutral-700">
+                <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-primary-bg rounded-3xl border border-primary-border">
                     <NavBar page={page} setPage={setPage}/>
                     {/* Respective Content to NavBar Selection */}
                     {page == 0 && <AboutSection/>}

@@ -21,12 +21,12 @@ const ProfilePanel = () => {
 
             {/* Name */}
             <div className="flex-1">
-                <h1 className="text-2xl sm:text-lg md:text-3xl font-bold text-gray-100">
+                <h1 className="text-2xl sm:text-lg md:text-3xl font-bold text-primary-text">
                     {profileInfo.name}
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-lg sm:text-md md:text-xl text-gray-200 font-medium">
+                <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
                     {profileInfo.tagline}
                 </p>
 

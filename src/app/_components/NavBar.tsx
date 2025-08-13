@@ -19,7 +19,7 @@ const NavBar = ({
                 {/* Section Header */}
                 <div className="flex justify-between mb-6">
                     <div className="text-center">
-                        <h1 className="text-2xl md:text-3xl font-bold text-gray-200">
+                        <h1 className="text-2xl md:text-3xl font-bold text-primary-text">
                             About Tim ✌
                         </h1>
                     </div>
@@ -29,10 +29,10 @@ const NavBar = ({
                             <button
                                 key={item.name}
                                 onClick={() => setPage(item.id)}
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                className={`px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                     page == item.id
-                                        ? 'bg-blue-100 text-blue-700'
-                                        : 'text-gray-300 hover:bg-gray-100 hover:text-gray-900'
+                                        ? 'bg-fill-bg text-fill-text font-bold'
+                                        : 'text-tertiary-text font-medium hover:bg-fill-bg-hover hover:text-fill-text-hover'
                                 }`}
                             >
                                 {item.name}
