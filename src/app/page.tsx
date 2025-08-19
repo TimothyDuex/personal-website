@@ -20,9 +20,11 @@ export default function Home() {
                 <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-primary-bg rounded-3xl border border-primary-border">
                     <NavBar page={page} setPage={setPage}/>
                     {/* Respective Content to NavBar Selection */}
-                    {page == 0 && <AboutSection />}
-                    {page == 1 && <ProfessionalExperience />}
-                    {page == 2 && <MusicSection />}
+                    <div className="max-w-4xl mx-auto px-6 py-2">
+                        {page == 0 && <AboutSection/>}
+                        {page == 1 && <ProfessionalExperience/>}
+                        {page == 2 && <MusicSection/>}
+                    </div>
                 </div>
             </div>
         </div>

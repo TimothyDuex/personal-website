@@ -21,14 +21,12 @@ const ProfessionalExperience = () => {
 
     return (
         <>
-            <div className="max-w-4xl mx-auto px-6 py-2">
-                <h2 className="text-2xl font-bold text-primary-text mb-8">Professional Experiences</h2>
+            <h2 className="text-2xl font-bold text-primary-text mb-8">Professional Experiences</h2>
 
-                <div className="space-y-6">
-                    {experiences.map((exp) => (
-                        <WorkExperienceCard key={exp.id} experience={exp} openModal={openModal} />
-                    ))}
-                </div>
+            <div className="space-y-6">
+                {experiences.map((exp) => (
+                    <WorkExperienceCard key={exp.id} experience={exp} openModal={openModal} />
+                ))}
             </div>
 
             {/* Modal Overlay */}
