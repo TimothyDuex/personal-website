@@ -4,7 +4,7 @@ import SoundcloudTrackEmbed from "./SoundcloudTrackEmbed";
 
 function MusicSection() {
     return (
-        <div className="max-w-4xl px-6 py-2">
+        <>
             <h2 className="text-2xl font-bold text-primary-text mb-8">Productions and Mixes</h2>
             <div className="grid grid-cols-1 gap-3">
                 <p className="text-lg text-secondary-text leading-relaxed mb-6">
@@ -15,7 +15,7 @@ function MusicSection() {
                 <h2 className="text-1xl font-bold text-secondary-text mb-2">Current Spotify Picks</h2>
                 <SpotifyPlaylistEmbed playlistId="7fyaLFggepWCTkGzt104BD"/>
             </div>
-        </div>
+        </>
     );
 }
 
