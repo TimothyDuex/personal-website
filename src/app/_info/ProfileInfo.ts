@@ -1,6 +1,6 @@
 export interface ProfileInfo {
     name: string;
-    tagline?: string;
+    tagline: string;
     profileImage: string;
     className: string;
 }
