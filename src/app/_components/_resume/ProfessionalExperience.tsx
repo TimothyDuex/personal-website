@@ -11,6 +11,8 @@ import {
 import getWorkExperience, { WorkExperience } from "../../_info/WorkExperience";
 import IconTextRow from "./IconTextRow";
 import Image from "next/image";
+import SlideInOnScroll from "../_animations/SlideInOnScroll";
+import TiltCard from "../_animations/TiltCard";
 
 const ProfessionalExperience = () => {
   const [selectedExperience, setSelectedExperience] =
@@ -34,11 +36,9 @@ const ProfessionalExperience = () => {
 
       <div className="space-y-6">
         {experiences.map((exp) => (
-          <WorkExperienceCard
-            key={exp.id}
-            experience={exp}
-            openModal={openModal}
-          />
+          <SlideInOnScroll key={exp.id} direction="up">
+            <WorkExperienceCard experience={exp} openModal={openModal} />
+          </SlideInOnScroll>
         ))}
       </div>
 
@@ -61,9 +61,9 @@ function WorkExperienceCard({
   openModal: (experience: WorkExperience) => void;
 }) {
   return (
-    <div
+    <TiltCard
       key={experience.id}
-      className="bg-secondary-bg border border-secondary-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+      className="bg-secondary-bg border border-secondary-border rounded-lg p-6 cursor-pointer"
       onClick={() => openModal(experience)}
     >
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
@@ -77,7 +77,7 @@ function WorkExperienceCard({
           <WorkExperienceCardPeriod experience={experience} />
         </div>
       </div>
-    </div>
+    </TiltCard>
   );
 }
 

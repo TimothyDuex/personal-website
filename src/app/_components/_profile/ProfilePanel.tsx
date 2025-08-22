@@ -1,6 +1,9 @@
 import React from "react";
 import { getProfileInfo, ProfileInfo } from "../../_info/ProfileInfo";
 import Image from "next/image";
+import TypewriterText from "../_animations/TypewriterText";
+import GradientText from "../_animations/GradientText";
+import StaggeredList from "../_animations/StaggeredList";
 
 const ProfilePanel = () => {
   const profileInfo: ProfileInfo = getProfileInfo();
@@ -19,22 +22,46 @@ const ProfilePanel = () => {
         </div>
       </div>
 
-      {/* Name */}
       <div className="flex-1">
-        <h1 className="text-2xl sm:text-lg md:text-3xl font-bold text-primary-text">
-          {profileInfo.name}
-        </h1>
-
-        {/* Tagline */}
-        <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
-          {profileInfo.tagline}
-        </p>
-
-        {/* Animated underline */}
-        <div className="w-auto h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2"></div>
+        <StaggeredList
+          items={[
+            <ProfileName key={profileInfo.name} />,
+            <ProfileTagline key={profileInfo.tagline} />,
+            <ProfileDescription key={"description"} />,
+          ]}
+          delay={3000}
+        />
       </div>
     </div>
   );
 };
+
+function ProfileName() {
+  const profileInfo: ProfileInfo = getProfileInfo();
+
+  return (
+    <h1 className="text-2xl sm:text-lg md:text-3xl font-bold text-primary-text">
+      <TypewriterText text={profileInfo.name} speed={130} />
+    </h1>
+  );
+}
+
+function ProfileTagline() {
+  const profileInfo: ProfileInfo = getProfileInfo();
+
+  return (
+    <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
+      <TypewriterText text={profileInfo.tagline} delay={3000} speed={70} />
+    </p>
+  );
+}
+
+function ProfileDescription() {
+  return (
+    <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
+      <GradientText>Fullstack Software Engineer, DJ, Producer </GradientText>
+    </p>
+  );
+}
 
 export default ProfilePanel;

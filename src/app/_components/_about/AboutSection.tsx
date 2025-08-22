@@ -1,10 +1,11 @@
 import React from "react";
+import FloatingIcon from "../_animations/FloatingIcon";
 
 const AboutSection = () => {
   return (
     <>
       <h2 className="text-2xl font-bold text-primary-text mb-8">
-        About Tim ✌
+        About Tim {<FloatingIcon duration={2}>✌</FloatingIcon>}
       </h2>
 
       <div className="rounded-2xl mb-8">
