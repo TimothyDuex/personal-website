@@ -141,72 +141,74 @@ function WorkExperiencePopOver({
 }) {
   return (
     <div className="fixed inset-0 backdrop-blur-xs bg-black/10 flex items-center justify-center p-4 z-50">
-      <div className="bg-primary-bg rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-primary-border">
-        {/* Modal Header */}
-        <div className="sticky top-0 bg-primary-bg border-b border-primary-border px-6 py-4 flex justify-between items-start">
-          <div>
-            <WorkExperienceCardCompany experience={experience} />
-            <IconTextRow icon={Briefcase} text={experience.position} />
-            <IconTextRow icon={MapPin} text={experience.location} />
-            <WorkExperienceCardPeriod experience={experience} />
+      <SlideInOnScroll direction="none">
+        <div className="bg-primary-bg rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-primary-border">
+          {/* Modal Header */}
+          <div className="sticky top-0 bg-primary-bg border-b border-primary-border px-6 py-4 flex justify-between items-start">
+            <div>
+              <WorkExperienceCardCompany experience={experience} />
+              <IconTextRow icon={Briefcase} text={experience.position} />
+              <IconTextRow icon={MapPin} text={experience.location} />
+              <WorkExperienceCardPeriod experience={experience} />
+            </div>
+            <button
+              onClick={closeModal}
+              className="text-tertiary-text hover:text-gray-600 transition-colors p-1"
+            >
+              <X size={24} />
+            </button>
           </div>
-          <button
-            onClick={closeModal}
-            className="text-tertiary-text hover:text-gray-600 transition-colors p-1"
-          >
-            <X size={24} />
-          </button>
-        </div>
 
-        {/* Modal Content */}
-        <div className="px-6 py-6">
-          <div className="space-y-6">
-            {/* Description */}
-            <div>
-              <h3 className="text-lg font-semibold text-primary-text mb-3">
-                Overview
-              </h3>
-              <p className="text-secondary-text leading-relaxed">
-                {experience.description}
-              </p>
-            </div>
+          {/* Modal Content */}
+          <div className="px-6 py-6">
+            <div className="space-y-6">
+              {/* Description */}
+              <div>
+                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                  Overview
+                </h3>
+                <p className="text-secondary-text leading-relaxed">
+                  {experience.description}
+                </p>
+              </div>
 
-            {/* Responsibilities */}
-            <div>
-              <h3 className="text-lg font-semibold text-primary-text mb-3">
-                Key Responsibilities
-              </h3>
-              <ul className="space-y-2">
-                {experience.responsibilities.map((responsibility, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-secondary-text">
-                      {responsibility}
+              {/* Responsibilities */}
+              <div>
+                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                  Key Responsibilities
+                </h3>
+                <ul className="space-y-2">
+                  {experience.responsibilities.map((responsibility, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="text-secondary-text">
+                        {responsibility}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Technologies */}
+              <div>
+                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                  Technologies & Tools
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {experience.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-fill-bg text-fill-text px-3 py-1 rounded-full text-sm font-medium border border-fill-border"
+                    >
+                      {tech}
                     </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Technologies */}
-            <div>
-              <h3 className="text-lg font-semibold text-primary-text mb-3">
-                Technologies & Tools
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {experience.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-fill-bg text-fill-text px-3 py-1 rounded-full text-sm font-medium border border-fill-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </SlideInOnScroll>
     </div>
   );
 }

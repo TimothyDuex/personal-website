@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface SlideInOnScrollProps {
   children: React.ReactNode;
-  direction?: "left" | "right" | "up" | "down";
+  direction?: "left" | "right" | "up" | "down" | "none";
   className?: string;
 }
 
@@ -33,6 +33,7 @@ const SlideInOnScroll: React.FC<SlideInOnScrollProps> = ({
   }, []);
 
   const directionClasses: Record<string, string> = {
+    none: "",
     left: "translate-x-[-50px]",
     right: "translate-x-[50px]",
     up: "translate-y-[50px]",
