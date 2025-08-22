@@ -1,6 +1,7 @@
 import React, { useState, useRef, JSX } from "react";
 import { useTextToSpeech } from "../../_hooks/useTextToSpeech";
 import { CirclePause, Volume2 } from "lucide-react";
+import LoadingCircle from "./LoadingCircle";
 
 interface ListenableTextProps {
   children: React.ReactNode;
@@ -61,7 +62,7 @@ export const ListenableText: React.FC<ListenableTextProps> = ({
       >
         <div className="flex items-center gap-2">
           {isLoading ? (
-            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <LoadingCircle w={4} h={4} />
           ) : isCurrentTextPlaying ? (
             <CirclePause className="w-4 h-4 text-secondary-text" />
           ) : (

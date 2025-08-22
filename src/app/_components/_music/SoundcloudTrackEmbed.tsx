@@ -1,4 +1,5 @@
 import React from "react";
+import IframeWithLoading from "../_util/IframeWithLoading";
 
 interface SoundcloudTrackEmbedProps {
   trackId: string;
@@ -11,7 +12,7 @@ const SoundcloudTrackEmbed: React.FC<SoundcloudTrackEmbedProps> = ({
 
   return (
     <>
-      <iframe
+      <IframeWithLoading
         src={trackUrl}
         width="100%"
         height="166"

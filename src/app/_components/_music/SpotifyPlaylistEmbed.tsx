@@ -1,4 +1,5 @@
 import React from "react";
+import IframeWithLoading from "../_util/IframeWithLoading";
 
 interface SpotifyPlaylistEmbedProps {
   playlistId: string;
@@ -11,7 +12,7 @@ const SpotifyPlaylistEmbed: React.FC<SpotifyPlaylistEmbedProps> = ({
 
   return (
     <>
-      <iframe
+      <IframeWithLoading
         src={playlistUrl}
         width="100%"
         height="352"
