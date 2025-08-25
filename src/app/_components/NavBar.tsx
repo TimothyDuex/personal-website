@@ -4,8 +4,8 @@ const NavBar = ({
   page,
   setPage,
 }: {
-  page: number;
-  setPage: (page: number) => void;
+  page: string;
+  setPage: (page: string) => void;
 }) => {
   const navItems = [
     { id: 0, name: "About" },
@@ -24,9 +24,10 @@ const NavBar = ({
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => setPage(item.id)}
+                onClick={() => setPage(item.name)}
                 className={`px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                  page == item.id
+                  page == item.name.toLowerCase() ||
+                  (page == "" && item.name == navItems[0].name)
                     ? "bg-fill-bg text-fill-text font-bold"
                     : "text-tertiary-text font-medium hover:bg-fill-bg-hover hover:text-fill-text-hover"
                 }`}
