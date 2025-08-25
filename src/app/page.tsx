@@ -3,7 +3,7 @@
 import ContactInfoPanel from "./_components/_profile/ContactInfoPanel";
 import NavBar from "./_components/NavBar";
 import AboutSection from "./_components/_about/AboutSection";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import ProfessionalExperience from "./_components/_resume/ProfessionalExperience";
 import MusicSection from "./_components/_music/MusicSection";
 import { useRouter, useSearchParams } from "next/navigation";
