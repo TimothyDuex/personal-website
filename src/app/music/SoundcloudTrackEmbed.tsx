@@ -1,5 +1,5 @@
 import React from "react";
-import IframeWithLoading from "../_util/IframeWithLoading";
+import IframeWithLoading from "../_components/_util/IframeWithLoading";
 
 interface SoundcloudTrackEmbedProps {
   trackId: string;

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, JSX } from "react";
 import { useTextToSpeech } from "../../_hooks/useTextToSpeech";
 import { CirclePause, Volume2 } from "lucide-react";

@@ -8,11 +8,11 @@ import {
   MessageSquareMore,
   X,
 } from "lucide-react";
-import getWorkExperience, { WorkExperience } from "../../_info/WorkExperience";
+import getWorkExperience, { WorkExperience } from "../_info/WorkExperience";
 import IconTextRow from "./IconTextRow";
 import Image from "next/image";
-import SlideInOnScroll from "../_animations/SlideInOnScroll";
-import TiltCard from "../_animations/TiltCard";
+import SlideInOnScroll from "../_components/_animations/SlideInOnScroll";
+import TiltCard from "../_components/_animations/TiltCard";
 
 const ProfessionalExperience = () => {
   const [selectedExperience, setSelectedExperience] =

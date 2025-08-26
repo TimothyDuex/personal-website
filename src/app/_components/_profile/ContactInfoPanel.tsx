@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import getContactInfo, { ContactInfo } from "../../_info/ContactInfo";

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
+import ContactInfoPanel from "./_components/_profile/ContactInfoPanel";
+import NavBar from "./_components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +30,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense>{children}</Suspense>
+        <Suspense>
+          <div className="w-screen min-h-screen bg-neutral-950">
+            <div className="grid justify-center">
+              {/* Contact Info Panel */}
+              <div className="pt-6" />
+              <ContactInfoPanel />
+              {/* NavBar */}
+              <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-primary-bg rounded-3xl border border-primary-border">
+                <NavBar />
+                {/* Respective Content to NavBar Selection */}
+                <div className="max-w-4xl mx-auto px-6 py-2">{children}</div>
+              </div>
+            </div>
+          </div>
+        </Suspense>
       </body>
     </html>
   );

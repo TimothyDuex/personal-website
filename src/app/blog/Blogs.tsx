@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "../../api/supabase/client";
+import { createClient } from "../api/supabase/client";
 import BlogList from "./BlogList";
-import LoadingCircle from "../_util/LoadingCircle";
+import LoadingCircle from "../_components/_util/LoadingCircle";
 
 export type BlogPost = {
   id: number;

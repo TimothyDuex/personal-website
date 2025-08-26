@@ -1,5 +1,5 @@
 import React from "react";
-import FloatingIcon from "../_animations/FloatingIcon";
+import FloatingIcon from "../_components/_animations/FloatingIcon";
 
 const AboutSection = () => {
   return (

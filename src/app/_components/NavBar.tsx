@@ -1,12 +1,14 @@
-import React from "react";
+"use client";
 
-const NavBar = ({
-  page,
-  setPage,
-}: {
-  page: string;
-  setPage: (page: string) => void;
-}) => {
+import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+
+const NavBar = () => {
+  const router = useRouter();
+  const pathName = usePathname();
+  const pathParts = pathName.split("/");
+  const pathStart = pathParts.length > 1 ? pathParts[1] : "";
+
   const navItems = [
     { id: 0, name: "About" },
     { id: 1, name: "Resume" },
@@ -24,10 +26,10 @@ const NavBar = ({
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => setPage(item.name)}
+                onClick={() => router.push(item.name.toLowerCase())}
                 className={`px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                  page == item.name.toLowerCase() ||
-                  (page == "" && item.name == navItems[0].name)
+                  pathStart == item.name.toLowerCase() ||
+                  (pathStart == "" && item.name == navItems[0].name)
                     ? "bg-fill-bg text-fill-text font-bold"
                     : "text-tertiary-text font-medium hover:bg-fill-bg-hover hover:text-fill-text-hover"
                 }`}
