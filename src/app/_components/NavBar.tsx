@@ -23,7 +23,7 @@ const NavBar = () => {
         {/* Section Header */}
         <div className="flex justify-center">
           {/* Navigation Row */}
-          <div className="flex items-baseline space-x-4">
+          <div className="grid grid-cols-2 gap-4 sm:flex sm:items-baseline sm:space-x-4">
             {navItems.map((item) => (
               <button
                 key={item.name}
