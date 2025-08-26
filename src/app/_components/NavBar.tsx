@@ -26,7 +26,7 @@ const NavBar = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => router.push(item.name.toLowerCase())}
+                onClick={() => router.push(`/${item.name.toLowerCase()}`)}
                 className={`px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                   pathStart == item.name.toLowerCase() ||
                   (pathStart == "" && item.name == navItems[0].name)

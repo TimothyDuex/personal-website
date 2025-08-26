@@ -1,9 +1,9 @@
 import React from "react";
 import { getProfileInfo, ProfileInfo } from "../../_info/ProfileInfo";
 import Image from "next/image";
-import TypewriterText from "../_animations/TypewriterText";
-import GradientText from "../_animations/GradientText";
-import StaggeredList from "../_animations/StaggeredList";
+import TypewriterText from "../../_components/_animations/TypewriterText";
+import GradientText from "../../_components/_animations/GradientText";
+import StaggeredList from "../../_components/_animations/StaggeredList";
 
 const ProfilePanel = () => {
   const profileInfo: ProfileInfo = getProfileInfo();

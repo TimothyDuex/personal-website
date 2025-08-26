@@ -1,24 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { createClient } from "../api/supabase/client";
 import BlogList from "./BlogList";
 import LoadingCircle from "../_components/_util/LoadingCircle";
 
-export type BlogPost = {
+export interface BlogsTableData {
   id: number;
   title: string;
-  content: string;
+  content?: string;
   publication_date: Date;
   posted: boolean;
   imageUrl?: string;
-};
+}
 
 function Blog() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [blogPosts, setBlogPosts] = useState<BlogsTableData[]>([]);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -29,7 +29,7 @@ function Blog() {
         const supabase = createClient();
         const { data, error: supabaseError } = await supabase
           .from("blogs")
-          .select();
+          .select("id, title, publication_date, posted, imageUrl");
 
         if (supabaseError) {
           throw supabaseError;
@@ -57,38 +57,13 @@ function Blog() {
       }
     };
 
-    const fetchImages = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const supabase = createClient();
-        for (const post of blogPosts) {
-          if (!post.imageUrl) {
-            continue;
-          }
-          const { data } = supabase.storage
-            .from("Personal_Website_Blog_Images")
-            .getPublicUrl(post.imageUrl);
-
-          post.imageUrl = data.publicUrl;
-        }
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred");
-        console.error("Error fetching blog post images:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchBlogs();
-    fetchImages();
   }, []);
 
   if (loading) {
     return (
-      <div className="flex justify-center">
-        <LoadingCircle w={8} h={8} />;
+      <div className="flex items-center justify-center z-10">
+        <LoadingCircle w={10} h={10} />
       </div>
     );
   }

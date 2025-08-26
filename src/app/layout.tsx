@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
-import ContactInfoPanel from "./_components/_profile/ContactInfoPanel";
+import ContactInfoPanel from "./about/_profile/ContactInfoPanel";
 import NavBar from "./_components/NavBar";
 
 const geistSans = Geist({
