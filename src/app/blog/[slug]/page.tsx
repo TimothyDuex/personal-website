@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "../../api/supabase/client";
 import LoadingCircle from "../../_components/_util/LoadingCircle";
-import Blog, { BlogsTableData } from "../Blogs";
+import { BlogsTableData } from "../Blogs";
+import ForceMaxWidthHelper from "../../_components/_util/ForceMaxWidthHelper";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -48,10 +49,12 @@ export default function BlogPost() {
     };
 
     fetchBlog();
-  }, []);
+  }, [pathBlogTitle]);
 
   return (
     <>
+      {/* Force Max Width */}
+      <ForceMaxWidthHelper />
       <div className="grid grid-cols-1 gap-4">
         {/* Back Button */}
         <div className="flex justify-start">

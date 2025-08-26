@@ -13,6 +13,7 @@ const NavBar = () => {
     { id: 0, name: "About" },
     { id: 1, name: "Resume" },
     { id: 2, name: "Music" },
+    { id: 3, name: "Blog" },
   ];
 
   return (
