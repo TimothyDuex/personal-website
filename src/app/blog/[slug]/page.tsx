@@ -7,6 +7,7 @@ import { createClient } from "../../api/supabase/client";
 import LoadingCircle from "../../_components/_util/LoadingCircle";
 import { BlogsTableData } from "../Blogs";
 import ForceMaxWidthHelper from "../../_components/_util/ForceMaxWidthHelper";
+import MarkdownRenderer from "./_util/MarkdownRenderer";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -89,11 +90,7 @@ function BlogPostContent({ blogData }: { blogData: BlogsTableData }) {
       <h2 className="text-2xl font-bold text-primary-text mb-1 mt-2">
         {blogData.title}
       </h2>
-      <div className="grid grid-cols-1 gap-1">
-        <p className="text-lg text-secondary-text leading-relaxed mb-6">
-          {blogData.content}
-        </p>
-      </div>
+      <MarkdownRenderer content={blogData.content!} />
     </>
   );
 }
