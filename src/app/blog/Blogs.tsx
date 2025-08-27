@@ -72,7 +72,13 @@ function Blog() {
     return <div className="text-primary-text">Error: {error}</div>;
   }
 
-  return <BlogList blogPosts={blogPosts!.filter((post) => post.posted)} />;
+  return (
+    <BlogList
+      blogPosts={blogPosts!
+        .filter((post) => post.posted)
+        .sort((a, b) => +b.publication_date - +a.publication_date)}
+    />
+  );
 }
 
 export default Blog;
