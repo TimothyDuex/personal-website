@@ -16,7 +16,7 @@ function MusicSection() {
         <h2 className="text-1xl font-bold text-secondary-text mb-2">
           Most Recent Mix
         </h2>
-        <SoundcloudTrackEmbed trackId="2134015293" />
+        <SoundcloudTrackEmbed trackId="2160349479" />
         <h2 className="text-1xl font-bold text-secondary-text mb-2">
           Current Spotify Picks
         </h2>
