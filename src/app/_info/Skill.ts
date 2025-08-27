@@ -83,7 +83,7 @@ const skillCategories: SkillCategory[] = [
       },
       { name: "ESLint", icon: ESLint, url: "https://eslint.org" },
       { name: "Prettier", icon: Prettier, url: "https://prettier.io" },
-      { name: "Figma", icon: Figma, url: "https://eslint.org" },
+      { name: "Figma", icon: Figma, url: "https://www.figma.com" },
     ],
   },
   {
