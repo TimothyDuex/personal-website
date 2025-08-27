@@ -11,13 +11,13 @@ const ProfilePanel = () => {
     <div className={`flex items-center space-x-6 p-4 ${profileInfo.className}`}>
       {/* Profile Image */}
       <div className="relative flex-shrink-0">
-        <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden shadow-lg">
+        <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg">
           <Image
             src={`/images/${profileInfo.profileImage}`}
             alt={profileInfo.profileImage}
             width={75} // Optional, but recommended for explicit control
             height={75} // Optional, but recommended for explicit control
-            className="w-30 h20 object-contain flex-shrink-0"
+            className="w-30 h-20 object-contain flex-shrink-0"
           />
         </div>
       </div>
@@ -40,7 +40,7 @@ function ProfileName() {
   const profileInfo: ProfileInfo = getProfileInfo();
 
   return (
-    <h1 className="text-2xl sm:text-lg md:text-3xl font-bold text-primary-text">
+    <h1 className="text-2xl md:text-3xl font-bold text-primary-text">
       <TypewriterText text={profileInfo.name} speed={130} />
     </h1>
   );
@@ -50,7 +50,7 @@ function ProfileTagline() {
   const profileInfo: ProfileInfo = getProfileInfo();
 
   return (
-    <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
+    <p className="text-lg md:text-xl text-secondary-text font-medium">
       <TypewriterText text={profileInfo.tagline} delay={3000} speed={70} />
     </p>
   );
@@ -58,7 +58,7 @@ function ProfileTagline() {
 
 function ProfileDescription() {
   return (
-    <p className="text-lg sm:text-md md:text-xl text-secondary-text font-medium">
+    <p className="text-lg md:text-xl text-secondary-text font-medium">
       <GradientText>Fullstack Software Engineer, DJ, Producer </GradientText>
     </p>
   );
