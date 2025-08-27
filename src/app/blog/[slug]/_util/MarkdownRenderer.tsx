@@ -33,7 +33,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
             </h3>
           ),
           p: ({ children }) => (
-            <p className="mb-4 leading-relaxed text-secondary-text">{children}</p>
+            <p className="mb-4 leading-relaxed text-secondary-text">
+              {children}
+            </p>
           ),
           ul: ({ children }) => (
             <ul className="list-disc list-inside mb-4 space-y-2 text-secondary-text">
@@ -84,7 +86,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
             </th>
           ),
           td: ({ children }) => (
-            <td className="border border-secondary-border px-4 py-2">{children}</td>
+            <td className="border border-secondary-border px-4 py-2">
+              {children}
+            </td>
           ),
         }}
       >
