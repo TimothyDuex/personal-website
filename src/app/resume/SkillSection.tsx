@@ -6,7 +6,7 @@ const SkillSection: React.FC = () => {
 
   return (
     <section className="max-w-6xl mx-auto">
-      <div className="grid grid-rows-1 lg:grid-rows-2 gap-6">
+      <div className="grid grid-rows-1 lg:grid-rows-2 gap-6 mb-8">
         {skillCategories.map((category, categoryIndex) => (
           <div
             key={categoryIndex}
