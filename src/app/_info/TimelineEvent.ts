@@ -119,7 +119,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     id: "13",
     date: "May 2019",
-    title: "Bachelor of Computer Engineering",
+    title: "Bachelor of Science in Computer Engineering",
     subtitle: "Purdue University",
     description:
       "Focusing on software engineering, web technologies, and data structures.",
