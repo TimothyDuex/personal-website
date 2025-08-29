@@ -1,6 +1,5 @@
 import React from "react";
 import FloatingIcon from "../_components/_animations/FloatingIcon";
-import SkillSection from "../resume/SkillSection";
 import TimelineComponent from "./TimelineComponent";
 
 const AboutSection = () => {
