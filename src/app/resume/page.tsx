@@ -7,9 +7,9 @@ export default function ResumePage() {
   return (
     <>
       <h2 className="text-2xl font-bold text-primary-text mb-8">Skills</h2>
-      <SkillSection />;
-      <ProfessionalSummary />;
-      <ProfessionalExperience />;
+      <SkillSection />
+      <ProfessionalSummary />
+      <ProfessionalExperience />
     </>
   );
 }
