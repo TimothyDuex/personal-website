@@ -9,7 +9,7 @@ const SkillSection: React.FC = () => {
     <section className="max-w-6xl mx-auto">
       <div className="grid grid-rows-1 lg:grid-rows-2 gap-6 mb-8">
         {skillCategories.map((category, categoryIndex) => (
-          <View key={categoryIndex}>
+          <View key={categoryIndex} className="p-6">
             <div className="text-center mb-5">
               <h3 className="text-xl font-semibold text-primary-text mb-1">
                 {category.title}

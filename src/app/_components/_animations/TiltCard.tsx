@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import View from "../_util/View";
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -43,16 +44,18 @@ const TiltCard: React.FC<TiltCardProps> = ({
   };
 
   return (
-    <div
-      ref={ref}
-      className={`transition-transform duration-200 ease-out ${className}`}
-      style={transformStyle}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onClick={onClick}
-    >
-      {children}
-    </div>
+    <View className="p-6">
+      <div
+        ref={ref}
+        className={`transition-transform duration-200 ease-out ${className}`}
+        style={transformStyle}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={onClick}
+      >
+        {children}
+      </div>
+    </View>
   );
 };
 

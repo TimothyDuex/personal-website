@@ -63,7 +63,7 @@ function WorkExperienceCard({
   return (
     <TiltCard
       key={experience.id}
-      className="bg-secondary-bg border border-secondary-border rounded-lg p-6 cursor-pointer"
+      className="cursor-pointer"
       onClick={() => openModal(experience)}
     >
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
