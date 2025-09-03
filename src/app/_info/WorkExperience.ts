@@ -27,24 +27,18 @@ const workExperiences: WorkExperience[] = [
     description:
       "Fullstack engineering work on internal tools to support Amazon's internal HR system.",
     responsibilities: [
-      "Launched first micro-frontend host platform, onboarding three frontend services. Guided away " +
-        "teams in development and integration of full page and in-page MFEs.",
-      "Guided application process through Works Council approvals. Collaborated with away team " +
-        "to develop organization-wide enhancements for AuthN and AuthZ. Enabled additional users in " +
-        "34 of 38 European Works Council site buckets prior to leave. Focused on supporting partial " +
-        "Works Council approvals with targeted feature improvements.",
-      "Led frontend infrastructure and React UI development in a two-and-a-half-month sprint to " +
-        "showcase product to leadership by end of 2023 development cycle. Coordinated efforts with " +
-        "two teams to evaluate feasible deliverables in the given timeframe. Negotiated with product " +
-        "stakeholders to adjust project requirements based on engineering capacity.",
-      "Conducted an operational readiness review of the core application pre-launch. Provided " +
-        "critical insights into error handling, alarming protocols, and HR-PII data compliance. Rectified " +
-        "issues identified to guarantee a smooth product launch.",
+      "Launched my org's first micro-frontend host platform, enabling 3+ domain teams to integrate full-page and in-page MFEs.",
+      "Led AuthN/AuthZ infrastructure enhancements across European Works Council sites, expanding access in 34 of 38 regions.",
+      "Coordinated a 2.5-month cross-team sprint to deliver a high-visibility React UI demo for leadership.",
+      "Drove operational readiness review, improving error handling, alarms, and compliance before product launch.",
+      "Stepped in as acting Senior Engineer, mentoring engineers and guiding technical direction.",
     ],
     technologies: [
       "Typescript",
       "Javascript",
       "React",
+      "React Router",
+      "Redux",
       "Webpack",
       "Api Gateway",
       "Cloudfront",
@@ -64,13 +58,19 @@ const workExperiences: WorkExperience[] = [
     description:
       "Mid Level Backend Engineer building infrastructure to support asynchronous apis for S3.",
     responsibilities: [
-      "Designed and implemented Sweeper component to enhance S3's Async API Engine " +
-        "functionality. Developed component to discover and execute three critical time-sensitive operations.",
-      "Guided two engineers in integrating two new jobs into workflow enhanced by S3 Async API Engine Sweeper data corruption.",
-      "Introduced checksumming to S3 Async Engine Metadata Manager component. " +
-        "Ensuring data integrity during transmission to mitigate potential durability issues within service.",
+      "Designed and implemented the Sweeper component for S3’s Async API Engine to handle critical, time-sensitive workflows.",
+      "Introduced checksumming in Async Engine Metadata Manager, improving durability and preventing corruption.",
+      "Mentored engineers on integrating jobs into the Sweeper workflow, improving adoption and reliability.",
     ],
-    technologies: ["Java", "Cron Job Distribution", "EC2", "DynamoDB", "SQS"],
+    technologies: [
+      "Java",
+      "JUnit",
+      "Cron Job Distribution",
+      "S3",
+      "EC2",
+      "DynamoDB",
+      "SQS",
+    ],
   },
   {
     id: 3,
@@ -82,9 +82,10 @@ const workExperiences: WorkExperience[] = [
     description:
       "Entry level Backend Engineer building infrastructure for S3 Lifecycle Transitions team.",
     responsibilities: [
-      "Led design, planning, and implementation of a backend service to support the addition of archive tiers to Intelligent Tiering within S3.",
-      "Handled customer-impacting issues as part of team on-call rotation.",
-      "Assumed the role of Scrum Master to iterate and improve upon the team's implementation of Scrum methodology.",
+      "Built the backend service for S3 Intelligent Tiering, processing 100K+ TPS and enabling new archive tiers.",
+      "Designed the Iceidore Tier Down Worker, scaling workflows for petabyte-scale storage transitions.",
+      "Enhanced test infrastructure (Iron Giant framework), reducing runtime from 85 hrs → 75 mins and cutting false alarms.",
+      "Took on Scrum Master responsibilities, increasing team velocity by 20%.",
     ],
     technologies: ["Java", "JUnit Testing Framework"],
   },
