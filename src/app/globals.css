@@ -16,12 +16,12 @@
   --color-tertiary-text: var(--color-gray-300);
   --color-quaternary-text: var(--color-gray-400);
 
-  --color-primary-bg: var(--color-neutral-800);
+  --color-primary-bg: var(--color-neutral-900);
   --color-primary-border: var(--color-neutral-700);
-  --color-secondary-bg: var(--color-neutral-700);
+  --color-secondary-bg: var(--color-neutral-800);
   --color-secondary-border: var(--color-neutral-500);
-  --color-tertiary-bg: var(--color-neutral-600);
-  --color-tertiary-border: var(--color-neutral-300);
+  --color-tertiary-bg: var(--color-neutral-700);
+  --color-tertiary-border: var(--color-neutral-500);
 
   --color-fill-bg: var(--color-blue-100);
   --color-fill-bg-hover: var(--color-neutral-100);

@@ -33,7 +33,7 @@ const TimelineComponent = () => {
   const getColors = (type: TimelineEvent["type"]) => {
     const baseStyle = {
       color: "#737373",
-      boxShadow: "#737373 0px 0px 0px 4px",
+      boxShadow: "#525252 0px 0px 0px 4px",
     };
 
     switch (type) {
@@ -59,20 +59,20 @@ const TimelineComponent = () => {
         </p>
       </div>
 
-      <VerticalTimeline lineColor="#737373">
+      <VerticalTimeline lineColor="#525252">
         {timelineEvents.map((event) => (
           <VerticalTimelineElement
             key={event.id}
             className="vertical-timeline-element"
             contentStyle={{
-              background: "#404040",
-              color: "#737373",
+              background: "#262626",
+              color: "#525252",
               boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-              border: "1px solid #737373",
+              border: "1px solid #525252",
               borderRadius: "8px",
             }}
             contentArrowStyle={{
-              borderRight: "7px solid#737373",
+              borderRight: "7px solid#525252",
               borderTop: "7px solid transparent",
               borderBottom: "7px solid transparent",
             }}
