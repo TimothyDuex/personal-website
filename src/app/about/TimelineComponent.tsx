@@ -52,13 +52,6 @@ const TimelineComponent = () => {
 
   return (
     <div className="py-8">
-      <div className="text-center mb-5">
-        <p className="text-lg text-secondary-text max-w-2xl mx-auto">
-          A timeline of my professional growth, achievements, and life
-          milestones.
-        </p>
-      </div>
-
       <VerticalTimeline lineColor="#525252">
         {timelineEvents.map((event) => (
           <VerticalTimelineElement
