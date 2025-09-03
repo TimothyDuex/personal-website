@@ -11,7 +11,7 @@ const ProfilePanel = () => {
     <div className={`flex items-center space-x-6 p-4 ${profileInfo.className}`}>
       {/* Profile Image */}
       <div className="relative flex-shrink-0">
-        <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg">
+        <div className="w-24 h-24 rounded-xl overflow-hidden">
           <Image
             src={`/images/${profileInfo.profileImage}`}
             alt={profileInfo.profileImage}
