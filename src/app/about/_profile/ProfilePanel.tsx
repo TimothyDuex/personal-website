@@ -11,13 +11,13 @@ const ProfilePanel = () => {
     <div className={`flex items-center space-x-6 p-4 ${profileInfo.className}`}>
       {/* Profile Image */}
       <div className="relative flex-shrink-0">
-        <div className="w-24 h-24 rounded-xl overflow-hidden">
+        <div className="w-24 h-24 rounded-full overflow-hidden">
           <Image
             src={`/images/${profileInfo.profileImage}`}
             alt={profileInfo.profileImage}
             width={75} // Optional, but recommended for explicit control
             height={75} // Optional, but recommended for explicit control
-            className="w-30 h-20 object-contain flex-shrink-0"
+            className="w-full h-full object-cover flex-shrink-0"
           />
         </div>
       </div>
