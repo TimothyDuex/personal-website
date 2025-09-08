@@ -1,40 +1,74 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import getContactInfo, { ContactInfo } from "../../_info/ContactInfo";
 import getSocialLinks, { SocialLink } from "../../_info/SocialLink";
 import ProfilePanel from "./ProfilePanel";
 import ContactButton from "./ContactButton";
+import ScrollIndicator from "../../_components/ScrollIndicator";
 
 const ContactInfoPanel = () => {
   const [isContactOpen, setIsContactOpen] = React.useState<boolean>(false);
 
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [scrollY, setScrollY] = useState(0);
+
+  // @ts-expect-error
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-primary-bg border border-primary-border">
-      <div className="grid grid-rows-1 gap-1">
-        <div className="flex justify-center items-center">
-          <ProfilePanel />
-        </div>
-        <div className="flex justify-center items-center">
-          <ContactButton isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
-        </div>
-        <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            isContactOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="grid grid-cols-1 gap-5">
-            <hr className="border-neutral-300" />
-            <div className="flex justify-center items-center">
-              <ContactInfoExplicit />
-            </div>
-            <div className="flex justify-center items-center gap-2">
-              <ContactInfoImplicit />
+    <div
+      className="relative z-10 min-h-screen flex flex-col items-center justify-center px-8"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Main Content Container */}
+      <div
+        className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-primary-bg border border-primary-border"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+        }}
+      >
+        <div className="grid grid-rows-1 gap-1">
+          <div className="flex justify-center items-center">
+            <ProfilePanel />
+          </div>
+          <div className="flex justify-center items-center">
+            <ContactButton
+              isOpen={isContactOpen}
+              setIsOpen={setIsContactOpen}
+            />
+          </div>
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              isContactOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="grid grid-cols-1 gap-5">
+              <hr className="border-neutral-300" />
+              <div className="flex justify-center items-center">
+                <ContactInfoExplicit />
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <ContactInfoImplicit />
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <ScrollIndicator scrollY={scrollY} />
     </div>
   );
 };
