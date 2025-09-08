@@ -4,7 +4,6 @@ import "./globals.css";
 import { Suspense } from "react";
 import ContactInfoPanel from "./about/_profile/ContactInfoPanel";
 import NavBar from "./_components/NavBar";
-import NewNavbar from "./_components/NewNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

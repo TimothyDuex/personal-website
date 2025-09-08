@@ -10,18 +10,7 @@ import ScrollIndicator from "../../_components/ScrollIndicator";
 
 const ContactInfoPanel = () => {
   const [isContactOpen, setIsContactOpen] = React.useState<boolean>(false);
-
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [scrollY, setScrollY] = useState(0);
-
-  // @ts-expect-error
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: ((e.clientX - rect.left) / rect.width) * 100,
-      y: ((e.clientY - rect.top) / rect.height) * 100,
-    });
-  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -30,10 +19,7 @@ const ContactInfoPanel = () => {
   }, []);
 
   return (
-    <div
-      className="relative z-10 min-h-screen flex flex-col items-center justify-center px-8"
-      onMouseMove={handleMouseMove}
-    >
+    <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-8">
       {/* Main Content Container */}
       <div
         className="max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-primary-bg border border-primary-border"
