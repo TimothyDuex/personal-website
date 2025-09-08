@@ -4,6 +4,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import ContactInfoPanel from "./about/_profile/ContactInfoPanel";
 import NavBar from "./_components/NavBar";
+import NewNavbar from "./_components/NewNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,12 +35,11 @@ export default function RootLayout({
           <div className="w-screen min-h-screen bg-neutral-950">
             <div className="grid justify-center">
               {/* Contact Info Panel */}
-              <div className="pt-6" />
+              <NavBar />
               <ContactInfoPanel />
               {/* NavBar */}
               <div className="relative z-10 min-h-screen flex flex-col px-8">
                 <div className="max-w-4xl mx-6 my-6 px-6 py-4 bg-primary-bg rounded-3xl border border-primary-border">
-                  <NavBar />
                   {/* Respective Content to NavBar Selection */}
                   <div className="max-w-4xl mx-auto px-6 py-2">{children}</div>
                 </div>
