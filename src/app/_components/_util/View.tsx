@@ -10,11 +10,7 @@ interface ViewProps {
 const View: React.FC<ViewProps> = ({ children, className = "" }) => {
   return (
     <div className="p-[1px] rounded-lg bg-gradient-to-br from-secondary-border via-secondary-bg to-secondary-bg">
-      <div
-        className={`glass-card-secondary ${className}`}
-      >
-        {children}
-      </div>
+      <div className={`glass-card-secondary ${className}`}>{children}</div>
     </div>
   );
 };

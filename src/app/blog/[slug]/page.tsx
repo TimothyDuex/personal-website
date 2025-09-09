@@ -61,7 +61,7 @@ export default function BlogPost() {
         <div className="flex justify-start">
           <button
             onClick={() => router.push(`/blog`)}
-            className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-tertiary-text bg-primary-bg hover:bg-fill-bg-hover hover:text-fill-text-hover"
+            className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-tertiary-text bg-primary-bg/0 hover:bg-fill-bg-hover hover:text-fill-text-hover"
           >
             <CircleChevronLeft />
           </button>

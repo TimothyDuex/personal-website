@@ -16,11 +16,11 @@
   --color-tertiary-text: var(--color-gray-300);
   --color-quaternary-text: var(--color-gray-400);
 
-  --color-primary-bg: --alpha(var(--color-white) / 10%);
+  --color-primary-bg: var(--color-neutral-900);
   --color-primary-border: var(--color-neutral-700);
-  --color-secondary-bg: --alpha(var(--color-neutral-800) / 10%);
+  --color-secondary-bg: var(--color-neutral-800);
   --color-secondary-border: var(--color-neutral-500);
-  --color-tertiary-bg: --alpha(var(--color-neutral-700) / 40%);
+  --color-tertiary-bg: var(--color-neutral-700);
   --color-tertiary-border: var(--color-neutral-500);
 
   --color-fill-bg: --alpha(var(--color-blue-100) / 90%);
@@ -31,14 +31,17 @@
 }
 
 @layer utilities {
+  .glass-card-hero {
+    @apply rounded-3xl bg-white/10 backdrop-blur-lg border border-primary-border;
+  }
   .glass-card-primary {
-    @apply rounded-3xl bg-primary-bg backdrop-blur-lg border border-primary-border;
+    @apply rounded-3xl bg-white/10 border border-primary-border;
   }
   .glass-card-secondary {
-    @apply rounded-lg bg-secondary-bg border border-secondary-border shadow-lg hover:shadow-xl transition-shadow duration-300;
+    @apply rounded-lg bg-secondary-bg/10 border border-secondary-border shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
   .glass-card-tertiary {
-    @apply rounded-md bg-tertiary-bg;
+    @apply rounded-md bg-tertiary-bg/40;
   }
 }
 
