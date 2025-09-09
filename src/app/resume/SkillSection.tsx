@@ -24,7 +24,7 @@ const SkillSection: React.FC = () => {
                   href={skill.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-tertiary-bg hover:bg-gray-200 rounded-md px-1 py-1 text-sm font-medium text-secondary-text hover:text-gray-900 transition-all duration-200 cursor-pointer group hover:shadow-sm"
+                  className="bg-tertiary-bg hover:bg-gray-200 rounded-full px-2 py-1 text-sm font-medium text-secondary-text hover:text-gray-900 transition-all duration-200 cursor-pointer group hover:shadow-sm"
                 >
                   <span className="group-hover:scale-110 transition-transform duration-200 inline-block mr-1">
                     <skill.icon size={13} />

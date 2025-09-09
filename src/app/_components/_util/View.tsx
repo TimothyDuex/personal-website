@@ -11,7 +11,7 @@ const View: React.FC<ViewProps> = ({ children, className = "" }) => {
   return (
     <div className="p-[1px] rounded-lg bg-gradient-to-br from-secondary-border via-secondary-bg to-secondary-bg">
       <div
-        className={`bg-secondary-bg rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ${className}`}
+        className={`glass-card-secondary ${className}`}
       >
         {children}
       </div>

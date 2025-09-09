@@ -151,7 +151,7 @@ const ContactInfoPanel = () => {
       </div>
       {/* Main Content Container */}
       <div
-        className="relative z-10 max-w-4xl mx-4 my-4 px-6 py-4 rounded-3xl bg-white/10 backdrop-blur-lg border border-primary-border"
+        className="relative z-10 max-w-4xl mx-4 my-4 px-6 py-4 glass-card-primary"
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
