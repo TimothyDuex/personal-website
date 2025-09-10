@@ -49,7 +49,7 @@ const NavBar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="px-6 py-4">
+      <div className="px-2 py-1">
         {/* Section Header */}
         <div className="relative flex justify-center">
           {/* Mobile Dropdown (hidden on md and above) */}
