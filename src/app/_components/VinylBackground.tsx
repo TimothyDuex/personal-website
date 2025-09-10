@@ -45,7 +45,7 @@ const VinylBackground = ({ containerRef }: VinylBackgroundProps) => {
   const opacity = Math.max(0.3, 1 - scrollProgress * 0.7);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center">
+    <div className="fixed inset-0 flex items-center justify-center pointer-events-none">
       <div
         ref={vinylRef}
         className="relative w-96 h-96 md:w-[40rem] md:h-[40rem] lg:w-[50rem] lg:h-[50rem]"

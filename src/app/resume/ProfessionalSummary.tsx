@@ -25,8 +25,8 @@ function ProfessionalSummary() {
           productivity, both as personal pursuits and as areas where technology
           can create meaningful impact. I’m excited to bring my skills in
           scalable systems, product engineering, and user experience into
-          opportunities that sit at the intersection of tech, music, and
-          health—building products that inspire creativity, performance, and
+          opportunities that sit at the intersection of tech, music, and health.
+          Building products that inspire creativity, performance, and
           well-being.
         </p>
 
