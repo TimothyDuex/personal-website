@@ -93,11 +93,11 @@ const NavBar = () => {
               <button
                 key={item.name}
                 onClick={() => router.push(`/${item.name.toLowerCase()}`)}
-                className={`px-2 py-1 rounded-full text-sm transition-colors duration-200 ${
+                className={`px-2 py-1 rounded-full text-sm text-tertiary-text transition-colors duration-200 ${
                   pathStart == item.name.toLowerCase() ||
                   (pathStart == "" && item.name == navItems[0].name)
-                    ? "bg-fill-bg text-fill-text font-bold"
-                    : "text-tertiary-text font-medium hover:bg-fill-bg-hover hover:text-fill-text-hover"
+                    ? "font-bold"
+                    : "font-medium hover:bg-fill-bg-hover hover:text-fill-text-hover"
                 }`}
               >
                 {item.name}
