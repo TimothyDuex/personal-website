@@ -4,23 +4,23 @@ type LightState = "red" | "yellow" | "green";
 
 const lights = [
   {
-    onColor: "red-500",
-    offColor: "red-800",
+    onColor: "#ef4444", // red-500
+    offColor: "#991b1b", // red-800
     lightState: "red",
   },
   {
-    onColor: "yellow-300",
-    offColor: "yellow-800",
+    onColor: "#fde047", // yellow-300
+    offColor: "#92400e", // yellow-800
     lightState: "yellow",
   },
   {
-    onColor: "green-500",
-    offColor: "green-800",
+    onColor: "#22c55e", // green-500
+    offColor: "#166534", // green-800
     lightState: "green",
   },
 ];
 
-const Stoplight = () => {
+const StoplightPureCSS = () => {
   const [currentLight, setCurrentLight] = useState<LightState>("red");
 
   useEffect(() => {
@@ -37,8 +37,8 @@ const Stoplight = () => {
   }, [currentLight]); // Re-run when currentLight changes
 
   return (
-    <div className="max-w-fit border border-secondary-border rounded-sm bg bg-primary-bg">
-      <div className="grid grid-cols-1 justify-center items-center">
+    <div style={styles.container}>
+      <div style={styles.lightGrid}>
         {lights.map((light) => (
           <Light
             key={light.lightState}
@@ -63,9 +63,37 @@ function Light({
 }) {
   return (
     <div
-      className={`w-15 h-15 m-1 border border-secondary-border rounded-full bg bg-${active ? onColor : offColor} transition-colors duration-300 ease-out`}
-    ></div>
+      style={{
+        ...styles.light,
+        backgroundColor: active ? onColor : offColor,
+      }}
+    />
   );
 }
 
-export default Stoplight;
+const styles = {
+  container: {
+    maxWidth: "fit-content",
+    border: "1px solid #374151", // secondary-border equivalent
+    borderRadius: "2px",
+    backgroundColor: "#111827", // primary-bg equivalent (dark)
+    padding: "4px",
+  },
+  lightGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "4px",
+  },
+  light: {
+    width: "60px", // w-15 equivalent (15 * 0.25rem * 16 = 60px)
+    height: "60px", // h-15 equivalent
+    margin: "4px",
+    border: "1px solid #374151", // secondary-border equivalent
+    borderRadius: "50%",
+    transition: "background-color 0.3s ease",
+  },
+};
+
+export default StoplightPureCSS;
