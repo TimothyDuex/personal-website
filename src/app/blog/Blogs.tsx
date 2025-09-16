@@ -76,7 +76,13 @@ function Blog() {
     <BlogList
       blogPosts={blogPosts!
         .filter((post) => post.posted)
-        .sort((a, b) => +b.publication_date - +a.publication_date)}
+        .sort((a, b) => {
+          const dateB = new Date(b.publication_date);
+          const dateA = new Date(a.publication_date);
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          return dateB - dateA;
+        })}
     />
   );
 }
