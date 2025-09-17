@@ -61,9 +61,9 @@ export default function BlogPost() {
         <div className="flex justify-start">
           <button
             onClick={() => router.push(`/blog`)}
-            className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-tertiary-text bg-primary-bg/0 hover:bg-fill-bg-hover hover:text-fill-text-hover"
+            className="rounded-full adaptive-text-caption transition-colors duration-200 bg-primary-bg/0 hover:bg-fill-bg-hover hover:text-fill-text-hover"
           >
-            <CircleChevronLeft />
+            <CircleChevronLeft className="img-button-icon" />
           </button>
         </div>
         {/* Blog Content */}
@@ -72,9 +72,9 @@ export default function BlogPost() {
             <LoadingCircle w={10} h={10} />
           </div>
         )}
-        {error && <div className="text-primary-text">Error: {error}</div>}
+        {error && <div className="adaptive-text-body">Error: {error}</div>}
         {!loading && !error && !blogData && (
-          <div className="text-primary-text">
+          <div className="adaptive-text-body">
             Oops, you found a non-existent Blog Post, please go back.
           </div>
         )}
@@ -87,9 +87,7 @@ export default function BlogPost() {
 function BlogPostContent({ blogData }: { blogData: BlogsTableData }) {
   return (
     <>
-      <h2 className="text-2xl font-bold text-primary-text mb-1 mt-2">
-        {blogData.title}
-      </h2>
+      <h2 className="adaptive-text-heading mb-1 mt-2">{blogData.title}</h2>
       <MarkdownRenderer content={blogData.content!} />
     </>
   );

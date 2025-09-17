@@ -6,7 +6,9 @@ import ProfessionalSummary from "./ProfessionalSummary";
 export default function ResumePage() {
   return (
     <>
-      <h2 className="text-2xl font-bold text-primary-text mb-8">Skills</h2>
+      <h2 className="adaptive-text-heading adaptive-margin-bottom-general">
+        Skills
+      </h2>
       <SkillSection />
       <ProfessionalSummary />
       <ProfessionalExperience />

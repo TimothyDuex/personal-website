@@ -56,9 +56,9 @@ const NavBar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-full flex items-center justify-between text-secondary-text px-2 py-1 rounded-full hover:bg-white/10 transition-colors duration-200"
+              className="w-full flex items-center justify-between font-semibold adaptive-text-caption px-2 py-1 rounded-full hover:bg-fill-bg-hover hover:text-fill-text-hover transition-colors duration-200"
             >
-              <div className="font-medium">{selectedLabel}</div>
+              <div>{selectedLabel}</div>
               <ChevronDownIcon
                 className={`w-5 h-5 transition-transform duration-200 ${
                   isOpen ? "rotate-180" : ""
@@ -74,10 +74,8 @@ const NavBar = () => {
                     <button
                       key={item.name}
                       onClick={() => handleItemClick(item)}
-                      className={`w-full text-center px-4 py-2 rounded-full hover:bg-tertiary-bg ${
-                        selectedItem === item.name
-                          ? "bg-fill-bg text-fill-text font-medium hover:text-secondary-text"
-                          : "text-secondary-text"
+                      className={`w-full text-center px-2 py-1 adaptive-text-body rounded-full hover:bg-fill-bg-hover hover:text-fill-text-hover ${
+                        selectedItem === item.name ? " font-bold" : ""
                       }`}
                     >
                       {item.name}
@@ -93,7 +91,7 @@ const NavBar = () => {
               <button
                 key={item.name}
                 onClick={() => router.push(`/${item.name.toLowerCase()}`)}
-                className={`px-2 py-1 rounded-full text-sm text-tertiary-text transition-colors duration-200 ${
+                className={`px-2 py-1 rounded-full adaptive-text-caption transition-colors duration-200 ${
                   pathStart == item.name.toLowerCase() ||
                   (pathStart == "" && item.name == navItems[0].name)
                     ? "font-bold"

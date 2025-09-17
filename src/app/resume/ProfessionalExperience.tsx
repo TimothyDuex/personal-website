@@ -13,6 +13,7 @@ import IconTextRow from "./IconTextRow";
 import Image from "next/image";
 import SlideInOnScroll from "../_components/_animations/SlideInOnScroll";
 import TiltCard from "../_components/_animations/TiltCard";
+import { IMAGE_SIZES } from "../_util/imageSizes";
 
 const ProfessionalExperience = () => {
   const [selectedExperience, setSelectedExperience] =
@@ -30,11 +31,11 @@ const ProfessionalExperience = () => {
 
   return (
     <>
-      <h2 className="text-2xl font-bold text-primary-text mb-8">
+      <h2 className="adaptive-text-heading adaptive-margin-bottom-general">
         Professional Experiences
       </h2>
 
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-6">
         {experiences.map((exp) => (
           <SlideInOnScroll key={exp.id} direction="up">
             <WorkExperienceCard experience={exp} openModal={openModal} />
@@ -87,17 +88,20 @@ function WorkExperienceCardCompany({
   experience: WorkExperience;
 }) {
   return (
-    <div className={`flex items-center gap-3 mb-5`}>
-      <Image
-        src={`/images/${experience.companyImage}`}
-        alt={experience.companyImage}
-        width={75} // Optional, but recommended for explicit control
-        height={75} // Optional, but recommended for explicit control
-        className="w-10 h-10 object-contain flex-shrink-0"
-      />
-      <h3 className="text-xl font-semibold text-primary-text mb-1">
-        {experience.company}
-      </h3>
+    <div
+      className={`flex items-center adaptive-gap-general adaptive-margin-bottom-general`}
+    >
+      <div className="img-company">
+        <Image
+          src={`/images/${experience.companyImage}`}
+          alt={experience.companyImage}
+          width={128}
+          height={128}
+          className="img-cover rounded-md"
+          sizes={IMAGE_SIZES.company}
+        />
+      </div>
+      <h3 className="adaptive-text-subheading mb-1">{experience.company}</h3>
     </div>
   );
 }
@@ -108,9 +112,9 @@ function WorkExperienceCardDescription({
   experience: WorkExperience;
 }) {
   return (
-    <div className={`flex items-center gap-3`}>
-      <MessageSquareMore className="w-5 h-5 text-secondary-text flex-shrink-0" />
-      <p className="text-secondary-text text-sm line-clamp-2">
+    <div className={`flex items-center adaptive-gap-general`}>
+      <MessageSquareMore className="img-icon adaptive-text-caption flex-shrink-0" />
+      <p className="adaptive-text-caption line-clamp-2">
         {experience.description}
       </p>
     </div>
@@ -123,11 +127,9 @@ function WorkExperienceCardPeriod({
   experience: WorkExperience;
 }) {
   return (
-    <div className={`flex items-center gap-3`}>
-      <Calendar className="w-5 h-5 text-secondary-text flex-shrink-0" />
-      <p className="text-secondary-text font-medium text-right">
-        {experience.period}
-      </p>
+    <div className={`flex items-center adaptive-gap-general`}>
+      <Calendar className="img-icon adaptive-text-body flex-shrink-0" />
+      <p className="adaptive-text-body text-right">{experience.period}</p>
     </div>
   );
 }
@@ -140,11 +142,11 @@ function WorkExperiencePopOver({
   closeModal: () => void;
 }) {
   return (
-    <div className="fixed inset-0 backdrop-blur-xs bg-black/10 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 backdrop-blur-xs bg-black/10 flex items-center justify-center adaptive-padding-general z-50">
       <SlideInOnScroll direction="none">
         <div className="bg-primary-bg rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-primary-border">
           {/* Modal Header */}
-          <div className="sticky top-0 bg-primary-bg border-b border-primary-border px-6 py-4 flex justify-between items-start">
+          <div className="sticky top-0 bg-primary-bg border-b border-primary-border adaptive-padding-x-popover adaptive-padding-y-popover flex justify-between items-start">
             <div>
               <WorkExperienceCardCompany experience={experience} />
               <IconTextRow icon={Briefcase} text={experience.position} />
@@ -153,35 +155,35 @@ function WorkExperiencePopOver({
             </div>
             <button
               onClick={closeModal}
-              className="text-tertiary-text hover:text-gray-600 transition-colors p-1"
+              className="adaptive-text-caption hover:text-gray-600 transition-colors p-1"
             >
               <X size={24} />
             </button>
           </div>
 
           {/* Modal Content */}
-          <div className="px-6 py-6">
-            <div className="space-y-6">
+          <div className="adaptive-padding-x-popover adaptive-padding-y-popover">
+            <div className="space-y-3 md:space-y-4">
               {/* Description */}
               <div>
-                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                <h3 className="font-semibold adaptive-text-body adaptive-margin-bottom-popover-subheading">
                   Overview
                 </h3>
-                <p className="text-secondary-text leading-relaxed">
+                <p className="adaptive-text-body adaptive-text-body-line-height">
                   {experience.description}
                 </p>
               </div>
 
               {/* Responsibilities */}
               <div>
-                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                <h3 className="font-semibold adaptive-text-body adaptive-margin-bottom-popover-subheading">
                   Key Responsibilities
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-1 md:space-y-2">
                   {experience.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start">
                       <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-secondary-text">
+                      <span className="adaptive-text-body">
                         {responsibility}
                       </span>
                     </li>
@@ -191,14 +193,14 @@ function WorkExperiencePopOver({
 
               {/* Technologies */}
               <div>
-                <h3 className="text-lg font-semibold text-primary-text mb-3">
+                <h3 className="font-semibold adaptive-text-body adaptive-margin-bottom-popover-subheading">
                   Technologies & Tools
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap adaptive-gap-skills">
                   {experience.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-fill-bg text-fill-text px-3 py-1 rounded-full text-sm font-medium border border-fill-border"
+                      className="bg-secondary-bg adaptive-text-caption px-2 py-1 rounded-full"
                     >
                       {tech}
                     </span>

@@ -4,20 +4,25 @@ import Image from "next/image";
 import TypewriterText from "../../_components/_animations/TypewriterText";
 import GradientText from "../../_components/_animations/GradientText";
 import StaggeredList from "../../_components/_animations/StaggeredList";
+import { IMAGE_SIZES } from "../../_util/imageSizes";
 
 const ProfilePanel = () => {
   const profileInfo: ProfileInfo = getProfileInfo();
   return (
-    <div className={`flex items-center space-x-6 p-4 ${profileInfo.className}`}>
+    <div
+      className={`flex items-center space-x-2 sm:space-x-4 md:space-x-6 adaptive-padding-general ${profileInfo.className}`}
+    >
       {/* Profile Image */}
       <div className="relative flex-shrink-0">
-        <div className="w-24 h-24 rounded-full overflow-hidden">
+        <div className="img-profile rounded-full overflow-hidden">
           <Image
             src={`/images/${profileInfo.profileImage}`}
             alt={profileInfo.profileImage}
-            width={75} // Optional, but recommended for explicit control
-            height={75} // Optional, but recommended for explicit control
-            className="w-full h-full object-cover flex-shrink-0"
+            width={128} // Optional, but recommended for explicit control
+            height={128} // Optional, but recommended for explicit control
+            className="img-cover"
+            priority // Since this is likely above the fold
+            sizes={IMAGE_SIZES.profile}
           />
         </div>
       </div>
@@ -40,7 +45,7 @@ function ProfileName() {
   const profileInfo: ProfileInfo = getProfileInfo();
 
   return (
-    <h1 className="text-2xl md:text-3xl font-bold text-primary-text">
+    <h1 className="adaptive-text-heading">
       <TypewriterText text={profileInfo.name} speed={130} />
     </h1>
   );
@@ -50,7 +55,7 @@ function ProfileTagline() {
   const profileInfo: ProfileInfo = getProfileInfo();
 
   return (
-    <p className="text-lg md:text-xl text-secondary-text font-medium">
+    <p className="adaptive-text-body">
       <TypewriterText text={profileInfo.tagline} delay={3000} speed={70} />
     </p>
   );
@@ -58,7 +63,7 @@ function ProfileTagline() {
 
 function ProfileDescription() {
   return (
-    <p className="text-lg md:text-xl text-secondary-text font-medium">
+    <p className="adaptive-text-body font-medium">
       <GradientText>Fullstack Software Engineer, DJ, Producer </GradientText>
     </p>
   );

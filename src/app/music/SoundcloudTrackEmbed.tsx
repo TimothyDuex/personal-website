@@ -11,7 +11,7 @@ const SoundcloudTrackEmbed: React.FC<SoundcloudTrackEmbedProps> = ({
   const trackUrl = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true`;
 
   return (
-    <>
+    <div className="adaptive-margin-bottom-general">
       <IframeWithLoading
         src={trackUrl}
         width="100%"
@@ -19,7 +19,7 @@ const SoundcloudTrackEmbed: React.FC<SoundcloudTrackEmbedProps> = ({
         allow="autoplay"
         loading="lazy"
       />
-    </>
+    </div>
   );
 };
 

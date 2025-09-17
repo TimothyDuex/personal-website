@@ -24,10 +24,10 @@ const ContactInfoPanel = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-8">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 md:px-8">
       {/* Main Content Container */}
       <div
-        className="relative z-15 max-w-4xl mx-4 my-4 px-6 py-4 glass-card-hero"
+        className="relative z-15 max-w-4xl adaptive-margin-general px-6 py-2 md:py-4 glass-card-hero"
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
@@ -47,12 +47,12 @@ const ContactInfoPanel = () => {
               isContactOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="grid grid-cols-1 gap-5">
+            <div className="grid grid-cols-1 adaptive-column-gap-general">
               <hr className="border-neutral-300" />
               <div className="flex justify-center items-center">
                 <ContactInfoExplicit />
               </div>
-              <div className="flex justify-center items-center gap-2">
+              <div className="flex justify-center items-center adaptive-gap-skills">
                 <ContactInfoImplicit />
               </div>
             </div>
@@ -69,26 +69,15 @@ function ContactInfoExplicit() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 adaptive-gap-general justify-start">
         {contactInfo.map((contact, index) => (
-          <div key={index} className="flex items-center space-x-4">
-            <div className="flex-shrink-0 w-10 h-10 bg-fill-bg rounded-lg flex items-center justify-center">
-              <contact.icon className="w-5 h-5 text-fill-text" />
+          <div key={index} className="flex items-center space-x-2 md:space-x-4">
+            <div className="flex-shrink-0 img-icon-fill-bg-size bg-fill-bg rounded-lg flex items-center justify-center">
+              <contact.icon className="img-icon text-fill-text" />
             </div>
             <div>
-              <p className="text-sm font-medium text-quaternary-text">
-                {contact.label}
-              </p>
-              {contact.link ? (
-                <a
-                  href={contact.link}
-                  className="text-secondary-text hover:text-fill-text transition-colors duration-200"
-                >
-                  {contact.value}
-                </a>
-              ) : (
-                <p className="text-secondary-text">{contact.value}</p>
-              )}
+              <p className="adaptive-text-caption">{contact.label}</p>
+              <p className="adaptive-text-body">{contact.value}</p>
             </div>
           </div>
         ))}
@@ -102,17 +91,17 @@ function ContactInfoImplicit() {
 
   return (
     <div>
-      <div className="flex space-x-2">
+      <div className="flex space-x-3 md:space-x-4">
         {socialLinks.map((social, index) => (
           <a
             key={index}
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-10 h-10 flex items-center justify-center text-quaternary-text ${social.color} transition-colors duration-200`}
+            className={`img-icon flex items-center justify-center text-quaternary-text ${social.color} transition-colors duration-200`}
             aria-label={social.label}
           >
-            <social.icon className="w-5 h-5" />
+            <social.icon className="img-icon" />
           </a>
         ))}
       </div>

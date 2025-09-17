@@ -6,7 +6,7 @@ import AboutSummary from "./AboutSummary";
 const AboutSection = () => {
   return (
     <>
-      <h2 className="text-2xl font-bold text-primary-text mb-6">
+      <h2 className="adaptive-text-heading adaptive-margin-bottom-general">
         About Tim {<FloatingIcon duration={2}>✌</FloatingIcon>}
       </h2>
       <AboutSummary />

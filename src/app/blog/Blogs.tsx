@@ -69,7 +69,7 @@ function Blog() {
   }
 
   if (error) {
-    return <div className="text-primary-text">Error: {error}</div>;
+    return <div className="adaptive-text-body">Error: {error}</div>;
   }
 
   return (

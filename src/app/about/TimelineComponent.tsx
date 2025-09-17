@@ -51,7 +51,7 @@ const TimelineComponent = () => {
   };
 
   return (
-    <div className="py-8">
+    <div className="adaptive-padding-y-general">
       <VerticalTimeline lineColor="#525252">
         {timelineEvents.map((event) => (
           <VerticalTimelineElement
@@ -75,24 +75,22 @@ const TimelineComponent = () => {
             icon={getIcon(event.type)}
           >
             <div>
-              <h3 className="text-xl font-bold text-primary-text mb-1">
-                {event.title}
-              </h3>
+              <h3 className="adaptive-text-subheading mb-1">{event.title}</h3>
 
               {event.subtitle && (
-                <h4 className="text-lg font-medium text-secondary-text mb-2">
+                <h4 className="adaptive-text-body mb-1 md:mb-2">
                   {event.subtitle}
                 </h4>
               )}
 
               {event.location && (
-                <div className="flex items-center text-tertiary-text text-sm mb-3">
+                <div className="flex items-center adaptive-text-caption mb-1 sm:mb-2 mb-3">
                   <MapPin size={14} className="mr-1" />
                   {event.location}
                 </div>
               )}
 
-              <p className="text-secondary-text leading-relaxed">
+              <p className="adaptive-text-body adaptive-text-body-line-height">
                 {event.description}
               </p>
             </div>

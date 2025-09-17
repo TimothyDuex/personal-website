@@ -17,9 +17,13 @@ const ContactButton = ({
   return (
     <button
       onClick={togglePanel}
-      className="px-3 rounded-md text-sm font-medium transition-colors duration-200 text-tertiary-text bg-white/0 hover:bg-fill-bg-hover hover:text-fill-text-hover"
+      className="rounded-full text-sm font-medium transition-colors duration-200 text-tertiary-text bg-white/0 hover:bg-fill-bg-hover hover:text-fill-text-hover"
     >
-      {isOpen ? <CircleChevronUp /> : <CircleChevronDown />}
+      {isOpen ? (
+        <CircleChevronUp className="img-button-icon" />
+      ) : (
+        <CircleChevronDown className="img-button-icon" />
+      )}
     </button>
   );
 };

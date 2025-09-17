@@ -11,7 +11,7 @@ const SpotifyPlaylistEmbed: React.FC<SpotifyPlaylistEmbedProps> = ({
   const playlistUrl = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`;
 
   return (
-    <>
+    <div className="adaptive-margin-bottom-general">
       <IframeWithLoading
         src={playlistUrl}
         width="100%"
@@ -19,7 +19,7 @@ const SpotifyPlaylistEmbed: React.FC<SpotifyPlaylistEmbedProps> = ({
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
       />
-    </>
+    </div>
   );
 };
 
