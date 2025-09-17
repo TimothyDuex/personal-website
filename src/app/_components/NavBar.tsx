@@ -60,7 +60,7 @@ const NavBar = () => {
             >
               <div>{selectedLabel}</div>
               <ChevronDownIcon
-                className={`w-5 h-5 transition-transform duration-200 ${
+                className={`img-icon transition-transform duration-200 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -69,12 +69,12 @@ const NavBar = () => {
             {/* Dropdown Menu */}
             {isOpen && (
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 right-0 mt-1 w-fit bg-secondary-bg border border-tertiary-border rounded-lg shadow-lg z-50">
-                <div className="py-1">
+                <div className="py-3">
                   {navItems.map((item) => (
                     <button
                       key={item.name}
                       onClick={() => handleItemClick(item)}
-                      className={`w-full text-center px-2 py-1 adaptive-text-body rounded-full hover:bg-fill-bg-hover hover:text-fill-text-hover ${
+                      className={`w-full text-center px-4 py-2 adaptive-text-navbar-dropdown rounded-full hover:bg-fill-bg-hover hover:text-fill-text-hover ${
                         selectedItem === item.name ? " font-bold" : ""
                       }`}
                     >
