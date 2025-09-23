@@ -30,13 +30,16 @@ const NavBar = () => {
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(navItems[0].name);
+  const [selectedItem, setSelectedItem] = useState(
+    pathStart == "" ? navItems[0].name.toLowerCase() : pathStart,
+  );
 
   const selectedLabel =
-    navItems.find((item) => item.name === selectedItem)?.name || "Select";
+    navItems.find((item) => item.name.toLowerCase() === selectedItem)?.name ||
+    "Select";
 
   const handleItemClick = (item: { name: string }) => {
-    setSelectedItem(item.name);
+    setSelectedItem(item.name.toLowerCase());
     setIsOpen(false);
     router.push(`/${item.name.toLowerCase()}`);
   };
@@ -75,7 +78,9 @@ const NavBar = () => {
                       key={item.name}
                       onClick={() => handleItemClick(item)}
                       className={`w-full text-center px-4 py-2 adaptive-text-navbar-dropdown rounded-full hover:bg-fill-bg-hover hover:text-fill-text-hover ${
-                        selectedItem === item.name ? " font-bold" : ""
+                        selectedItem === item.name.toLowerCase()
+                          ? " font-bold"
+                          : ""
                       }`}
                     >
                       {item.name}
